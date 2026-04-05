@@ -1,0 +1,2313 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مهّد | Mahid</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #05080f;
+      --s1: #0a1020;
+      --s2: #0e1628;
+      --s3: #121d34;
+      --s4: #172340;
+      --text: #ddeaff;
+      --t2: #8ba3c9;
+      --t3: #4d6a92;
+      --blue: #3b82f6;
+      --blue2: #60a5fa;
+      --teal: #00d4a8;
+      --teal2: #00f5c8;
+      --red: #f43f5e;
+      --amber: #f59e0b;
+      --border: rgba(255, 255, 255, .07);
+      --border2: rgba(255, 255, 255, .13);
+      --glow-blue: rgba(59, 130, 246, .28);
+      --glow-teal: rgba(0, 212, 168, .22);
+      --r: 12px;
+      --r2: 18px;
+      --r3: 24px;
+      --max: 1160px;
+      --nav: 64px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, .45);
+      --shadow2: 0 20px 60px rgba(0, 0, 0, .55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 1100px 700px at 10% -5%, rgba(59, 130, 246, .16), transparent 55%),
+        radial-gradient(ellipse 900px 600px at 92% 8%, rgba(0, 212, 168, .12), transparent 50%),
+        radial-gradient(ellipse 700px 500px at 50% 105%, rgba(59, 130, 246, .09), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body>* {
+      position: relative;
+      z-index: 1
+    }
+
+    a {
+      color: var(--blue2);
+      text-decoration: none
+    }
+
+    a:hover {
+      color: #93c5fd
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--s4);
+      border-radius: 99px
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--nav);
+      background: rgba(5, 8, 15, .8);
+      backdrop-filter: blur(18px) saturate(1.6);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nav-i {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+      cursor: pointer
+    }
+
+    .brand-m {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--blue), #818cf8);
+      display: grid;
+      place-items: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: #fff;
+      box-shadow: 0 0 18px var(--glow-blue);
+      flex-shrink: 0
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.2px
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--t3);
+      margin-top: -2px
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 16px;
+      border-radius: var(--r);
+      border: 1px solid var(--border2);
+      background: rgba(255, 255, 255, .055);
+      color: var(--text);
+      font-family: 'Tajawal', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .18s;
+      white-space: nowrap;
+      text-decoration: none
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, .09);
+      border-color: var(--border2);
+      color: var(--text);
+      transform: translateY(-1px);
+      text-decoration: none
+    }
+
+    .btn:active {
+      transform: translateY(0)
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), #6366f1);
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 16px var(--glow-blue)
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.12);
+      color: #fff;
+      box-shadow: 0 6px 24px var(--glow-blue)
+    }
+
+    .btn-teal {
+      background: linear-gradient(135deg, #00b894, var(--teal));
+      border: none;
+      color: #003d30;
+      box-shadow: 0 4px 16px var(--glow-teal)
+    }
+
+    .btn-teal:hover {
+      filter: brightness(1.08);
+      color: #003d30
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--t2)
+    }
+
+    .btn-ghost:hover {
+      background: var(--s2);
+      color: var(--text)
+    }
+
+    .btn-red {
+      background: rgba(244, 63, 94, .1);
+      border: 1px solid rgba(244, 63, 94, .28);
+      color: #fb7185
+    }
+
+    .btn-red:hover {
+      background: rgba(244, 63, 94, .18);
+      color: #fda4af
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 13px;
+      border-radius: 10px
+    }
+
+    .btn-lg {
+      padding: 13px 28px;
+      font-size: 16px;
+      border-radius: 14px
+    }
+
+    /* PANELS */
+    .panel {
+      background: linear-gradient(160deg, rgba(14, 22, 40, .95), rgba(10, 16, 32, .85));
+      border: 1px solid var(--border);
+      border-radius: var(--r3);
+      padding: 26px;
+      box-shadow: var(--shadow)
+    }
+
+    .panel-hd {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 4px
+    }
+
+    .panel-sub {
+      font-size: 13px;
+      color: var(--t2);
+      margin-bottom: 20px;
+      line-height: 1.65
+    }
+
+    /* CARDS */
+    .card {
+      background: rgba(14, 22, 40, .75);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 18px;
+      transition: border-color .2s, background .2s
+    }
+
+    .card:hover {
+      border-color: var(--border2);
+      background: rgba(18, 29, 52, .85)
+    }
+
+    /* FORM */
+    .form {
+      display: grid;
+      gap: 13px
+    }
+
+    .g2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px
+    }
+
+    @media(max-width:640px) {
+      .g2 {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .field {
+      display: grid;
+      gap: 5px
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--t2)
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--r);
+      border: 1px solid var(--border2);
+      background: rgba(255, 255, 255, .05);
+      color: var(--text);
+      font-family: 'Tajawal', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, .15)
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--t3)
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+      line-height: 1.65
+    }
+
+    select option {
+      background: var(--s2)
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--t3);
+      margin-top: 2px
+    }
+
+    /* MESSAGES */
+    .msg-ok {
+      padding: 10px 14px;
+      border-radius: var(--r);
+      background: rgba(0, 212, 168, .1);
+      border: 1px solid rgba(0, 212, 168, .28);
+      color: #5fffd8;
+      font-size: 14px
+    }
+
+    .msg-err {
+      padding: 10px 14px;
+      border-radius: var(--r);
+      background: rgba(244, 63, 94, .1);
+      border: 1px solid rgba(244, 63, 94, .28);
+      color: #fb7185;
+      font-size: 14px
+    }
+
+    /* CHIPS */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px
+    }
+
+    .chip {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border2);
+      background: rgba(255, 255, 255, .05);
+      font-size: 13px;
+      color: var(--t2);
+      transition: all .15s
+    }
+
+    .chip-rm {
+      cursor: pointer
+    }
+
+    .chip-rm:hover {
+      border-color: rgba(244, 63, 94, .45);
+      background: rgba(244, 63, 94, .1);
+      color: #fb7185
+    }
+
+    .chip-ok {
+      border-color: rgba(0, 212, 168, .4);
+      background: rgba(0, 212, 168, .08);
+      color: #5fffd8
+    }
+
+    .chip-red {
+      border-color: rgba(244, 63, 94, .4);
+      background: rgba(244, 63, 94, .08);
+      color: #fb7185
+    }
+
+    .chip-blue {
+      border-color: rgba(59, 130, 246, .4);
+      background: rgba(59, 130, 246, .08);
+      color: #93c5fd
+    }
+
+    .chip-amber {
+      border-color: rgba(245, 158, 11, .4);
+      background: rgba(245, 158, 11, .08);
+      color: #fcd34d
+    }
+
+    .empty-chips {
+      font-size: 13px;
+      color: var(--t3);
+      padding: 4px 0
+    }
+
+    /* SPLIT */
+    .split {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      padding: 22px 0 50px
+    }
+
+    @media(max-width:860px) {
+      .split {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .sidebar {
+      position: sticky;
+      top: calc(var(--nav) + 14px);
+      align-self: start
+    }
+
+    .sidebar-box {
+      background: rgba(14, 22, 40, .9);
+      border: 1px solid var(--border);
+      border-radius: var(--r3);
+      padding: 8px
+    }
+
+    .sidebar-lbl {
+      padding: 10px 10px 4px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--t3);
+      text-transform: uppercase;
+      letter-spacing: .9px
+    }
+
+    .slink {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 11px;
+      border-radius: var(--r);
+      color: var(--t2);
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: all .16s;
+      margin-bottom: 1px;
+      text-decoration: none
+    }
+
+    .slink:hover {
+      background: var(--s2);
+      color: var(--text);
+      text-decoration: none
+    }
+
+    .slink.active {
+      background: rgba(59, 130, 246, .12);
+      color: var(--blue2)
+    }
+
+    .slink-ic {
+      font-size: 15px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0
+    }
+
+    .main-grid {
+      display: grid;
+      gap: 14px
+    }
+
+    /* KPI */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px
+    }
+
+    @media(max-width:600px) {
+      .kpis {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .kpi {
+      padding: 14px;
+      border-radius: var(--r);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--border);
+      text-align: center
+    }
+
+    .kpi-val {
+      font-size: 22px;
+      font-weight: 800;
+      margin-top: 4px
+    }
+
+    .kpi-lbl {
+      font-size: 11px;
+      color: var(--t3)
+    }
+
+    .col-ok {
+      color: var(--teal)
+    }
+
+    .col-blue {
+      color: var(--blue2)
+    }
+
+    .col-red {
+      color: var(--red)
+    }
+
+    .col-amber {
+      color: var(--amber)
+    }
+
+    /* MATCH RING */
+    .match-ring {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2.5px solid;
+      font-size: 14px;
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    /* PROGRESS */
+    .pbar-bg {
+      background: rgba(255, 255, 255, .07);
+      border-radius: 999px;
+      height: 7px;
+      overflow: hidden;
+      flex: 1
+    }
+
+    .pbar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+      transition: width .6s ease
+    }
+
+    /* MARKET BARS */
+    .mbar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .mbar-row:last-child {
+      border-bottom: none
+    }
+
+    .mbar-name {
+      font-size: 13px;
+      font-weight: 700;
+      min-width: 110px;
+      text-transform: capitalize;
+      color: var(--text)
+    }
+
+    .mbar-count {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--t2);
+      min-width: 26px;
+      text-align: left
+    }
+
+    /* GAP BARS */
+    .gbar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 46px;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .gbar-row:last-child {
+      border-bottom: none
+    }
+
+    .gbar-skill {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: capitalize;
+      color: var(--text)
+    }
+
+    .gbar-gap {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--red);
+      text-align: center
+    }
+
+    /* HERO */
+    .hero {
+      padding: 60px 0 40px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 20px;
+      align-items: start
+    }
+
+    @media(max-width:860px) {
+      .hero-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, .1);
+      border: 1px solid rgba(59, 130, 246, .25);
+      color: #93c5fd;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 8px var(--blue);
+      animation: blink 2s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(.75)
+      }
+    }
+
+    .hero-h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px, 3.8vw, 44px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.5px;
+      margin-bottom: 16px
+    }
+
+    .hero-h1 span {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero-desc {
+      color: var(--t2);
+      font-size: 15.5px;
+      line-height: 1.8;
+      margin-bottom: 26px
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--border)
+    }
+
+    .hstat-val {
+      font-size: 22px;
+      font-weight: 800
+    }
+
+    .hstat-lbl {
+      font-size: 11px;
+      color: var(--t3);
+      margin-top: 1px
+    }
+
+    .role-cards {
+      display: grid;
+      gap: 11px
+    }
+
+    .role-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      border-radius: var(--r2);
+      border: 1px solid var(--border);
+      background: rgba(14, 22, 40, .7);
+      cursor: pointer;
+      transition: all .22s;
+      text-decoration: none;
+      color: var(--text)
+    }
+
+    .role-card:hover {
+      border-color: var(--border2);
+      background: rgba(18, 29, 52, .9);
+      transform: translateX(-4px);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: var(--text)
+    }
+
+    [lang="en"] .role-card:hover {
+      transform: translateX(4px)
+    }
+
+    .role-ic {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      flex-shrink: 0
+    }
+
+    .role-lbl {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 3px
+    }
+
+    .role-desc {
+      font-size: 12px;
+      color: var(--t3);
+      line-height: 1.5
+    }
+
+    /* AUTH */
+    .auth-wrap {
+      max-width: 560px;
+      margin: 40px auto 60px
+    }
+
+    /* JOB CARD */
+    .jcard {
+      background: rgba(14, 22, 40, .75);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      padding: 18px;
+      transition: all .2s;
+      display: grid;
+      gap: 11px
+    }
+
+    .jcard:hover {
+      border-color: var(--border2);
+      box-shadow: var(--shadow)
+    }
+
+    .jcard-title {
+      font-size: 16px;
+      font-weight: 800
+    }
+
+    .jcard-meta {
+      font-size: 13px;
+      color: var(--t3);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .jcard-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    /* APPLICANT */
+    .acard {
+      padding: 14px;
+      border-radius: var(--r);
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid var(--border);
+      display: grid;
+      gap: 8px;
+      transition: border-color .2s
+    }
+
+    .acard:hover {
+      border-color: var(--border2)
+    }
+
+    /* MISC */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 14px 0
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700
+    }
+
+    .pill-ok {
+      background: rgba(0, 212, 168, .1);
+      color: var(--teal);
+      border: 1px solid rgba(0, 212, 168, .25)
+    }
+
+    .pill-red {
+      background: rgba(244, 63, 94, .1);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, .25)
+    }
+
+    .pill-blue {
+      background: rgba(59, 130, 246, .1);
+      color: var(--blue2);
+      border: 1px solid rgba(59, 130, 246, .25)
+    }
+
+    .sbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 14px;
+      border-radius: var(--r2);
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid var(--border);
+      margin-bottom: 4px
+    }
+
+    .sbar input {
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .sh {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px
+    }
+
+    .sh-title {
+      font-size: 18px;
+      font-weight: 800
+    }
+
+    .exp-btn {
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--t3);
+      cursor: pointer;
+      font-family: 'Tajawal', sans-serif;
+      transition: all .18s
+    }
+
+    .exp-btn:hover {
+      border-color: var(--border2);
+      color: var(--t2);
+      background: var(--s2)
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fu {
+      animation: fadeUp .38s ease both
+    }
+
+    .fu2 {
+      animation: fadeUp .38s .07s ease both
+    }
+
+    .fu3 {
+      animation: fadeUp .38s .14s ease both
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .mt-10 {
+      margin-top: 10px
+    }
+
+    .mt-14 {
+      margin-top: 14px
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .items-end {
+      align-items: flex-end
+    }
+
+    .gap-8 {
+      gap: 8px
+    }
+
+    .gap-10 {
+      gap: 10px
+    }
+
+    .gap-12 {
+      gap: 12px
+    }
+
+    .w-full {
+      width: 100%
+    }
+
+    .bold {
+      font-weight: 800
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--t3)
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-i">
+      <div class="brand" onclick="location.hash='#home'">
+        <img src="C:\Users\Alhan\.gemini\antigravity\scratch\logo.png" alt="Mahid Logo" style="width:38px; height:38px; object-fit:cover; border-radius:11px; box-shadow:0 0 18px var(--glow-blue);" />
+        <div>
+          <div class="brand-name" id="brandName">مهّد</div>
+          <div class="brand-sub" id="brandSub">خريجون · شركات · جامعات</div>
+        </div>
+      </div>
+      <div class="nav-r">
+        <a class="btn btn-ghost btn-sm" href="#home" id="homeLink">الرئيسية</a>
+        <a class="btn btn-ghost btn-sm" href="#register" id="registerLink">تسجيل</a>
+        <a class="btn btn-primary btn-sm" href="#login" id="loginLink">دخول</a>
+        <button class="btn btn-red btn-sm hidden" id="logoutBtn" type="button">خروج</button>
+        <button class="btn btn-ghost btn-sm" id="langBtn" type="button">English</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap" id="app"></div>
+
+  <script>
+    const DICT = {
+      en: {
+        brandName: "Mahid", brandSub: "Graduates · Companies · Universities",
+        home: "Home", register: "Register", login: "Login", logout: "Logout", lang: "العربية",
+        h1a: "Bridging graduates", h1b: "with the job market",
+        hdesc: "Mahid helps graduates assess their skills, enables companies to find talent, and gives universities insight into market demand.",
+        quickAccess: "Quick Access", goDash: "Go to my dashboard", needLogin: "Please log in first.",
+        chooseRole: "Choose account type", grad: "Graduate", comp: "Company", uni: "University",
+        name: "Full Name", email: "Email address", pw: "Password", major: "Major / Specialty",
+        cr: "CR Number (10 digits)", uniHint: "University must register with a @s.mu.edu.sa email",
+        cvLbl: "Upload CV (PDF)", save: "Save", add: "Add", clear: "Clear",
+        skills: "Skills", certs: "Certificates", projects: "Projects",
+        analysis: "Skill Matching", postJob: "Post a Job",
+        reqSkills: "Required skills (comma-separated)", jobTitle: "Job Title",
+        search: "Search", view: "View", jobs: "My Jobs",
+        jobOps: "Job Opportunities", apply: "Apply", applied: "Applied ✓",
+        applicants: "Applicants",
+        badCreds: "Incorrect email or password.", emailTaken: "Email already registered.",
+        created: "Account created! Redirecting…",
+        crBad: "CR must be exactly 10 digits.", uniBad: "Email must end with @s.mu.edu.sa",
+        pdfOnly: "PDF files only.", noPdf: "Please select a PDF first.",
+        cvSaved: "CV uploaded!", saved: "Saved.",
+        noJobs: "No jobs available yet.", needSkills: "Please add your skills first.",
+        reportDone: "Matching report generated.", noResults: "No results found.",
+        missingSkills: "Missing skills", myGrads: "My University Graduates",
+        uniOptional: "University Email (optional)", uniOptHint: "Lets your university view your profile.",
+        marketTitle: "Skills Compatibility Analysis",
+        marketDesc: "Percentage of your skills compatibility with the labor market, alongside tailored suggestions based on your major.",
+        marketMatch: "Labor Market Compatibility %", inMarket: "Required in market", notInMarket: "Additional", suggestions: "Suggested for your major",
+        suggestedCourses: "Suggested Courses", courseOrg: "Provider:",
+        suggestedJobs: "Suggested Job Roles", matchPct: "Match:",
+        marketImport: "Update List", marketReset: "Reset Default",
+        importJson: "Upload market JSON", jsonHint: "JSON with skills[] array (+ optional updatedAt, categories)",
+        updatedAt: "List updated:", noFile: "Please choose a JSON file first.", badJson: "Invalid JSON. Must have skills[].",
+        imported: "Market list updated", restored: "Default list restored.",
+        sectionProfile: "Profile", sectionSkills: "Skills", sectionMarket: "Market Compatibility",
+        sectionCerts: "Certificates", sectionProjects: "Projects", sectionCv: "CV Upload",
+        sectionAnalysis: "Skill Analysis", sectionJobs: "Job Board",
+        sectionPost: "Post Job", sectionMyJobs: "My Jobs", sectionSearch: "Search Graduates",
+        sectionReports: "Skill Reports", sectionMarketUni: "Market Analysis", sectionGrads: "My Graduates",
+        noCv: "No CV", viewCv: "View CV", major2: "Major:", reqMajor: "Required major:",
+        match: "Match", missing: "Missing", status: "Status",
+        viewApplicants: "View Applicants", hideApplicants: "Hide",
+        noApplicants: "No applicants yet.", noJobsYet: "No jobs posted yet.", noGrads: "No graduates found.",
+        demanded: "Demanded", possessed: "Your graduates", gap: "Gap",
+        gapReportDesc: "Compare your graduates' skills with market requirements.",
+        marketAnalysisDesc: "Top demanded skills from posted jobs.",
+        gradsDesc: "Graduates who linked their university email to your domain.",
+        filterSkill: "Filter by skill", filterMajor: "Filter by major",
+        refresh: "Refresh", runAnalysis: "Run Analysis", genReport: "Generate Report", analyzeMarket: "Analyze Market",
+        gradRoleDesc: "Profile · Skills · Market Compatibility · Certificates · CV · Matching · Jobs",
+        compRoleDesc: "Post jobs · Search graduates · View CVs · Applicants",
+        uniRoleDesc: "Skill gap reports · View your graduates",
+        industry: "Industry", crNumber: "CR Number (fixed)", crNote: "This number is unique and cannot be changed.",
+        activeJobs: "Current Jobs", pastJobs: "Previous Jobs", closeJob: "Close Job", candidates: "Recommended Candidates", jobClosed: "Job closed.",
+        jobPosted: "Job posted!", oneSkill: "Add at least one required skill.",
+        uniDomainErr: "Cannot determine university domain for this account.",
+        noJobsPosted: "No jobs posted.", noUniGrads: "No graduates from your university found.",
+        noGapDetected: "No clear skill gap detected.", noJobsAnalyze: "No jobs to analyze.",
+        marketDone: "Market analysis completed.", foundGrads: "graduates from your university.",
+        welcome: "Welcome", topSkills: "Top Skills",
+        overview: "Overview", uniName: "Majmaah University", uniLoc: "Al Majmaah", pctRegistered: "% Registered from Uni", avgTechGap: "Avg Tech Skills Gap", pctEmployed: "% Employed (Applied)", stuMarketMatch: "Students' Market Match",
+      },
+      ar: {
+        brandName: "مهّد", brandSub: "خريجون · شركات · جامعات",
+        home: "الرئيسية", register: "تسجيل حساب", login: "تسجيل دخول", logout: "تسجيل خروج", lang: "English",
+        h1a: "نجسر الفجوة بين", h1b: "الخريجين وسوق العمل",
+        hdesc: "مهّد يساعد الخريج على تحليل مهاراته، ويساعد الشركات في إيجاد الكفاءات، ويمنح الجامعات تقارير عن متطلبات السوق.",
+        quickAccess: "دخول سريع", goDash: "انتقل إلى لوحتي", needLogin: "يلزم تسجيل الدخول أولاً.",
+        chooseRole: "اختر نوع الحساب", grad: "خريج", comp: "شركة", uni: "جامعة",
+        name: "الاسم الكامل", email: "البريد الإلكتروني", pw: "كلمة المرور", major: "التخصص",
+        cr: "رقم السجل التجاري (10 أرقام)", uniHint: "الجامعة لازم تسجّل بإيميل @s.mu.edu.sa",
+        cvLbl: "رفع السيرة الذاتية (PDF)", save: "حفظ", add: "إضافة", clear: "مسح",
+        skills: "المهارات", certs: "الشهادات", projects: "المشاريع",
+        analysis: "مطابقة المهارات", postJob: "نشر وظيفة",
+        reqSkills: "المهارات المطلوبة (افصل بفاصلة)", jobTitle: "مسمى الوظيفة",
+        search: "بحث", view: "عرض", jobs: "وظائفي",
+        jobOps: "فرص وظيفية", apply: "تقديم", applied: "تم التقديم ✓",
+        applicants: "المتقدمون",
+        badCreds: "بيانات الدخول غير صحيحة.", emailTaken: "هذا البريد مسجّل مسبقاً.",
+        created: "تم إنشاء الحساب! جاري التحويل…",
+        crBad: "السجل التجاري لازم 10 أرقام بالضبط.", uniBad: "البريد لازم ينتهي بـ @s.mu.edu.sa",
+        pdfOnly: "يسمح بـ PDF فقط.", noPdf: "اختر ملف PDF أولاً.",
+        cvSaved: "تم رفع السيرة الذاتية!", saved: "تم الحفظ.",
+        noJobs: "لا توجد وظائف منشورة حالياً.", needSkills: "أضف مهاراتك أولاً.",
+        reportDone: "تم إنشاء تقرير المطابقة.", noResults: "لا توجد نتائج.",
+        missingSkills: "المهارات الناقصة", myGrads: "خريجو جامعتي",
+        uniOptional: "الإيميل الجامعي (اختياري)", uniOptHint: "يتيح لجامعتك رؤية ملفك.",
+        marketTitle: "تحليل توافق المهارات لسوق العمل",
+        marketDesc: "نسبة مئوية لتوافق مهاراتك مع سوق العمل، والمهارات المطلوبة بالسوق، واقتراحات لمهارات مناسبة بناءً على تخصصك.",
+        marketMatch: "نسبة توافق المهارات مع سوق العمل", inMarket: "مهارات مطلوبة تملكها", notInMarket: "مهارات إضافية تملكها", suggestions: "اقتراحات لتخصصك",
+        suggestedCourses: "اقتراحات لدورات تدريبية تناسب تخصصك", courseOrg: "الجهة:",
+        suggestedJobs: "اقتراحات لوظائف تناسب تخصصك ومهاراتك", matchPct: "نسبة التوافق:",
+        marketImport: "تحديث القائمة", marketReset: "استرجاع الافتراضي",
+        importJson: "رفع ملف السوق (JSON)", jsonHint: "JSON يحتوي على skills[] + updatedAt اختياري",
+        updatedAt: "آخر تحديث:", noFile: "اختر ملف JSON أولاً.", badJson: "صيغة JSON غير صحيحة. لازم تحتوي على skills[].",
+        imported: "تم تحديث قائمة السوق", restored: "تم استرجاع القائمة الافتراضية.",
+        sectionProfile: "الملف الشخصي", sectionSkills: "المهارات", sectionMarket: "توافق المهارات",
+        sectionCerts: "الشهادات", sectionProjects: "المشاريع", sectionCv: "السيرة الذاتية",
+        sectionAnalysis: "تحليل المهارات", sectionJobs: "الوظائف",
+        sectionPost: "نشر وظيفة", sectionMyJobs: "وظائفي", sectionSearch: "بحث عن خريجين",
+        sectionReports: "تقارير المهارات", sectionMarketUni: "تحليل السوق", sectionGrads: "خريجو جامعتي",
+        noCv: "لا يوجد CV", viewCv: "عرض CV", major2: "التخصص:", reqMajor: "التخصص المطلوب:",
+        match: "التطابق", missing: "ناقص", status: "الحالة",
+        viewApplicants: "عرض المتقدمين", hideApplicants: "إخفاء",
+        noApplicants: "لا يوجد متقدمون بعد.", noJobsYet: "لا توجد وظائف لديك.", noGrads: "لا توجد نتائج.",
+        demanded: "مطلوب", possessed: "خريجوك", gap: "الفجوة",
+        gapReportDesc: "مقارنة مهارات خريجيك مع المتطلبات السوقية.",
+        marketAnalysisDesc: "أكثر المهارات المطلوبة من الوظائف المنشورة.",
+        gradsDesc: "خريجون ربطوا إيميلهم الجامعي بنفس دومين حسابك.",
+        filterSkill: "تصفية بالمهارة", filterMajor: "تصفية بالتخصص",
+        refresh: "تحديث", runAnalysis: "تشغيل التحليل", genReport: "إنشاء التقرير", analyzeMarket: "تحليل السوق",
+        gradRoleDesc: "ملف · مهارات · توافق المهارات · شهادات · CV · مطابقة · وظائف",
+        compRoleDesc: "نشر وظائف · بحث عن خريجين · عرض السير الذاتية",
+        uniRoleDesc: "تقارير فجوة المهارات · عرض خريجيك",
+        industry: "مجال الشركة", crNumber: "السجل التجاري (ثابت)", crNote: "هذا الرقم فريد ولا يمكن تغييره.",
+        activeJobs: "الوظائف الحالية", pastJobs: "الوظائف السابقة", closeJob: "إغلاق الوظيفة", candidates: "مرشحين مناسبين", jobClosed: "تم إغلاق الوظيفة.",
+        jobPosted: "تم نشر الوظيفة!", oneSkill: "أضف مهارة واحدة على الأقل.",
+        uniDomainErr: "لا يمكن تحديد دومين الجامعة لهذا الحساب.",
+        noJobsPosted: "لا توجد وظائف منشورة.", noUniGrads: "لا يوجد خريجون من جامعتك.",
+        noGapDetected: "لا توجد فجوة واضحة بالبيانات الحالية.", noJobsAnalyze: "لا توجد وظائف للتحليل.",
+        marketDone: "تم تحليل مهارات السوق.", foundGrads: "خريج/ة من جامعتك.",
+        welcome: "مرحباً", topSkills: "أكثر المهارات طلباً",
+        overview: "نظرة عامة", uniName: "جامعة المجمعة", uniLoc: "المجمعة", pctRegistered: "نسبة المسجلين من الجامعة", avgTechGap: "معدل الفجوة التقنية", pctEmployed: "نسبة الطلاب المتوظفين (متقدمين)", stuMarketMatch: "توافق مهارات طلابك مع السوق",
+      }
+    };
+
+    const gl = () => localStorage.getItem("mhd_lang") || "ar";
+    const sl = l => localStorage.setItem("mhd_lang", l);
+    const t = k => DICT[gl()]?.[k] ?? k;
+    const isAr = () => gl() === "ar";
+
+    function applyLang() {
+      const l = gl();
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+      [["brandName", "brandName"], ["brandSub", "brandSub"], ["homeLink", "home"],
+      ["registerLink", "register"], ["loginLink", "login"], ["logoutBtn", "logout"], ["langBtn", "lang"]]
+        .forEach(([id, k]) => { const e = document.getElementById(id); if (e) e.textContent = t(k) });
+    }
+
+    /* Storage */
+    const isValidCR = cr => /^\d{10}$/.test(String(cr || "").trim());
+    const getDomain = e => { const a = String(e || "").trim().toLowerCase(); const i = a.lastIndexOf("@"); return i >= 0 ? a.slice(i + 1) : "" };
+    const isUniEmail = e => String(e || "").trim().toLowerCase().endsWith("@s.mu.edu.sa");
+    const sameDomain = (a, b) => String(a || "").trim().toLowerCase() === String(b || "").trim().toLowerCase();
+    const splitCS = s => String(s || "").split(",").map(x => x.trim()).filter(Boolean);
+    const isPdf = f => f && (f.type === "application/pdf" || (f.name || "").toLowerCase().endsWith(".pdf"));
+    const uid = p => `${p}_${Math.random().toString(16).slice(2)}_${Date.now()}`;
+    const DUMMY_DB = {
+      users: [
+        { id: "u1", role: "university", name: "جامعة المجمعة", email: "info@s.mu.edu.sa", pwHash: "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", uniDomain: "s.mu.edu.sa", createdAt: Date.now() },
+        { id: "c1", role: "company", name: "TechNova", email: "hr@technova.sa", pwHash: "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", cr: "1234567890", createdAt: Date.now() },
+        { id: "g1", role: "graduate", name: "أحمد عبدالله", email: "ahmed@s.mu.edu.sa", pwHash: "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", createdAt: Date.now(), uniDomain: "s.mu.edu.sa" },
+        { id: "g2", role: "graduate", name: "سارة محمد", email: "sara@s.mu.edu.sa", pwHash: "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", createdAt: Date.now(), uniDomain: "s.mu.edu.sa" },
+        { id: "g3", role: "graduate", name: "خالد فهد", email: "khalid@test.com", pwHash: "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", createdAt: Date.now(), uniDomain: null }
+      ],
+      profiles: [
+        { userId: "u1", name: "جامعة المجمعة" },
+        { userId: "c1", name: "TechNova", industry: "تقنية المعلومات" },
+        { userId: "g1", name: "أحمد عبدالله", major: "علوم الحاسب", uniEmail: "ahmed@s.mu.edu.sa", uniDomain: "s.mu.edu.sa", skills: ["JavaScript", "React", "Node.js", "SQL", "Git", "Problem Solving"], certificates: ["AWS Certified Developer", "React Basics"], projects: ["نظام إدارة مهام", "موقع تجارة إلكترونية"], cv: null, updatedAt: Date.now() },
+        { userId: "g2", name: "سارة محمد", major: "أمن سيبراني", uniEmail: "sara@s.mu.edu.sa", uniDomain: "s.mu.edu.sa", skills: ["Python", "Network Security", "Linux", "Penetration Testing"], certificates: ["CompTIA Security+"], projects: ["تحليل ثغرات شبكة محلية"], cv: null, updatedAt: Date.now() },
+        { userId: "g3", name: "خالد فهد", major: "إدارة أعمال", uniEmail: "", uniDomain: null, skills: ["القيادة", "Excel", "Project Management", "Agile"], certificates: ["PMP Basics"], projects: [], cv: null, updatedAt: Date.now() }
+      ],
+      jobs: [
+        { jobId: "j1", companyId: "c1", title: "مطور واجهات أمامية (Frontend Developer)", major: "علوم الحاسب", requiredSkills: ["JavaScript", "React", "HTML", "CSS"], createdAt: Date.now() - 100000, status: "active" },
+        { jobId: "j2", companyId: "c1", title: "محلل أمن سيبراني", major: "أمن سيبراني", requiredSkills: ["Cybersecurity", "Network Security", "Linux"], createdAt: Date.now() - 50000, status: "active" },
+        { jobId: "j3", companyId: "c1", title: "مطور خلفيات", major: "هندسة برمجيات", requiredSkills: ["Node.js", "SQL", "Python"], createdAt: Date.now() - 200000, status: "closed" }
+      ],
+      apps: [
+        { aid: "a1", jid: "j1", gid: "g1", at: Date.now() - 5000 },
+        { aid: "a2", jid: "j2", gid: "g2", at: Date.now() - 2000 }
+      ]
+    };
+    window.memoryDB = JSON.parse(localStorage.getItem('mhd_dummy_db')) || DUMMY_DB;
+    const db = () => window.memoryDB;
+    const sdb = s => {
+      window.memoryDB = s;
+      localStorage.setItem('mhd_dummy_db', JSON.stringify(s));
+      fetch("/api/db", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(s) }).catch(e => console.warn("Backend not available, used local storage."));
+    };
+    const findUser = em => db().users.find(u => u.email.toLowerCase() === String(em).toLowerCase()) || null;
+
+    async function hashPw(pw) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pw));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    const getSess = () => JSON.parse(localStorage.getItem("mhd_sess") || "null");
+    const setSess = s => localStorage.setItem("mhd_sess", JSON.stringify(s));
+    const clearSess = () => localStorage.removeItem("mhd_sess");
+    const getProf = id => db().profiles.find(p => p.userId === id) || null;
+    function upsertProf(p) { const s = db(); const i = s.profiles.findIndex(x => x.userId === p.userId); if (i >= 0) s.profiles[i] = p; else s.profiles.push(p); sdb(s); return p }
+    function createJob(j) { const s = db(); s.jobs.push(j); sdb(s); return j }
+    function closeJobById(jid) { const s = db(); const j = s.jobs.find(x => x.jobId === jid); if (j) j.status = "closed"; sdb(s); }
+    const listJobs = () => db().jobs.slice().sort((a, b) => b.createdAt - a.createdAt);
+    const listGrads = () => { const s = db(); return s.users.filter(u => u.role === "graduate").map(g => ({ user: g, profile: s.profiles.find(p => p.userId === g.id) || null })) };
+    function applyJob(jid, gid) { const s = db(); if (s.apps.some(a => a.jid === jid && a.gid === gid)) return false; s.apps.push({ aid: uid("app"), jid, gid, at: Date.now() }); sdb(s); return true }
+    const isApplied = (jid, gid) => db().apps.some(a => a.jid === jid && a.gid === gid);
+    function listApplicants(jid) { const s = db(); return s.apps.filter(a => a.jid === jid).map(a => ({ app: a, user: s.users.find(u => u.id === a.gid), profile: s.profiles.find(p => p.userId === a.gid) || null })).sort((x, y) => y.app.at - x.app.at) }
+    function matchSkills(gs, rs) {
+      const g = new Set((gs || []).map(s => s.trim().toLowerCase()).filter(Boolean));
+      const r = (rs || []).map(s => s.trim().toLowerCase()).filter(Boolean);
+      return { pct: r.length ? Math.round(r.filter(s => g.has(s)).length / r.length * 100) : 0, matched: r.filter(s => g.has(s)), missing: r.filter(s => !g.has(s)) };
+    }
+
+    /* Saudi Market */
+    const MK = "mhd_market2";
+    const rd = (k, d) => { try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : d } catch { return d } };
+    const wr = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+    const MD = { updatedAt: "2026-03-09", skills: ["javascript", "typescript", "html", "css", "react", "next.js", "vue", "node.js", "express", "python", "java", "c#", ".net", "php", "laravel", "django", "flask", "sql", "postgresql", "mysql", "mongodb", "redis", "git", "github", "docker", "kubernetes", "linux", "nginx", "rest api", "graphql", "aws", "azure", "gcp", "ci/cd", "devops", "data analysis", "data analytics", "power bi", "tableau", "excel", "machine learning", "deep learning", "nlp", "pandas", "numpy", "scikit-learn", "tensorflow", "pytorch", "data engineering", "etl", "data warehouse", "bigquery", "snowflake", "cybersecurity", "soc", "siem", "splunk", "penetration testing", "network security", "iam", "zero trust", "product management", "project management", "agile", "scrum", "business analysis", "requirements gathering", "ui/ux", "figma", "sap", "oracle", "crm", "salesforce", "communication", "presentation", "problem solving", "teamwork", "time management", "english"], categories: { software: ["javascript", "typescript", "react", "node.js", "sql", "git", "docker", "aws"], data: ["data analysis", "power bi", "python", "sql", "pandas", "machine learning"], security: ["cybersecurity", "siem", "soc", "network security", "iam"], product: ["product management", "project management", "agile", "scrum", "ui/ux", "figma"] } };
+    const loadM = () => { const s = rd(MK, null); return (s && Array.isArray(s.skills)) ? s : MD };
+    const saveM = d => wr(MK, d);
+    const resetM = () => { saveM(MD); return MD };
+    const normS = s => String(s || "").trim().toLowerCase();
+
+    function marketCmp(skills) {
+      const m = loadM(); const ms = new Set((m.skills || []).map(normS));
+      const c = (skills || []).map(normS).filter(Boolean);
+      const inM = c.filter(s => ms.has(s)); const notM = c.filter(s => !ms.has(s));
+      return { score: c.length ? Math.round(inM.length / c.length * 100) : 0, inMarket: inM, notInMarket: notM, updatedAt: m.updatedAt || "—" };
+    }
+    function marketRec(skills, major, lim = 8) {
+      const m = loadM(); const u = new Set((skills || []).map(normS).filter(Boolean)); const rec = new Set();
+      const maj = normS(major);
+      let catsToCheck = [];
+      if (maj.includes("حاسب") || maj.includes("برمج") || maj.includes("computer") || maj.includes("software") || maj.includes("cs") || maj.includes("it") || maj.includes("تقنية")) catsToCheck.push("software");
+      if (maj.includes("بيانات") || maj.includes("data") || maj.includes("ai") || maj.includes("ذكاء") || maj.includes("اصطناعي")) catsToCheck.push("data");
+      if (maj.includes("أمن") || maj.includes("سيبراني") || maj.includes("security") || maj.includes("cyber")) catsToCheck.push("security");
+      if (maj.includes("عمال") || maj.includes("إدارة") || maj.includes("business") || maj.includes("management") || maj.includes("product") || maj.includes("تسويق") || maj.includes("marketing")) catsToCheck.push("product");
+
+      if (catsToCheck.length > 0) {
+        catsToCheck.forEach(c => {
+          if (m.categories[c]) m.categories[c].forEach(s => { const n = normS(s); if (!u.has(n)) rec.add(n) });
+        });
+      } else {
+        for (const sk of Object.values(m.categories || {})) { if (!Array.isArray(sk)) continue; if (sk.some(s => u.has(normS(s)))) sk.forEach(s => { const n = normS(s); if (!u.has(n)) rec.add(n) }) }
+      }
+      ["communication", "presentation", "problem solving", "teamwork", "english"].forEach(s => { if (!u.has(s)) rec.add(s) });
+      return Array.from(rec).slice(0, lim);
+    }
+
+    function marketCourses(major) {
+      const maj = normS(major);
+      let courses = [];
+      if (maj.includes("حاسب") || maj.includes("برمج") || maj.includes("computer") || maj.includes("software") || maj.includes("cs") || maj.includes("it") || maj.includes("تقنية")) {
+        courses.push({ title: "Full-Stack Web Development Bootcamp", org: "أكاديمية طويق (Tuwaiq)" });
+        courses.push({ title: "React & Node.js Development", org: "منصة سطر (SATR)" });
+      } else if (maj.includes("بيانات") || maj.includes("data") || maj.includes("ai") || maj.includes("ذكاء") || maj.includes("اصطناعي")) {
+        courses.push({ title: "Data Analysis Foundation", org: "مسك الخيرية (Misk)" });
+        courses.push({ title: "Machine Learning Frameworks", org: "Coursera" });
+      } else if (maj.includes("أمن") || maj.includes("سيبراني") || maj.includes("security") || maj.includes("cyber")) {
+        courses.push({ title: "Cybersecurity Fundamentals", org: "دروب (Doroob)" });
+        courses.push({ title: "Certified Ethical Hacker", org: "أكاديمية طويق / Udemy" });
+      } else if (maj.includes("عمال") || maj.includes("إدارة") || maj.includes("business") || maj.includes("management") || maj.includes("product") || maj.includes("تسويق") || maj.includes("marketing")) {
+        courses.push({ title: "Agile Project Management", org: "Coursera (Google)" });
+        courses.push({ title: "Product Management", org: "مسك الخيرية (Misk)" });
+      } else {
+        courses.push({ title: "مهارات التواصل الفعال في بيئة العمل", org: "دروب (Doroob)" });
+        courses.push({ title: "Excel for Business Professionals", org: "Coursera / دروب" });
+        courses.push({ title: "أساسيات إدارة المشاريع", org: "إدراك (Edraak)" });
+      }
+      return courses;
+    }
+
+    function marketJobs(major, skills) {
+      const maj = normS(major);
+      let jobs = [];
+      if (maj.includes("حاسب") || maj.includes("برمج") || maj.includes("computer") || maj.includes("software") || maj.includes("cs") || maj.includes("it") || maj.includes("تقنية")) {
+        jobs.push({ title: "Software Engineer / مطور برمجيات", reqs: ["javascript", "python", "java", "c#", "sql", "git"] });
+        jobs.push({ title: "Frontend Developer / مطور واجهات", reqs: ["html", "css", "javascript", "react", "vue"] });
+        jobs.push({ title: "Backend Developer / مطور خلفية", reqs: ["node.js", "python", "java", "sql", "rest api"] });
+      } else if (maj.includes("بيانات") || maj.includes("data") || maj.includes("ai") || maj.includes("ذكاء") || maj.includes("اصطناعي")) {
+        jobs.push({ title: "Data Analyst / محلل بيانات", reqs: ["sql", "excel", "power bi", "tableau", "python"] });
+        jobs.push({ title: "Data Scientist / عالم بيانات", reqs: ["python", "machine learning", "pandas", "sql"] });
+      } else if (maj.includes("أمن") || maj.includes("سيبراني") || maj.includes("security") || maj.includes("cyber")) {
+        jobs.push({ title: "Cybersecurity Analyst / محلل أمن سيبراني", reqs: ["cybersecurity", "network security", "siem"] });
+        jobs.push({ title: "Penetration Tester / مختبر اختراق", reqs: ["penetration testing", "linux", "cybersecurity"] });
+      } else if (maj.includes("عمال") || maj.includes("إدارة") || maj.includes("business") || maj.includes("management") || maj.includes("product") || maj.includes("تسويق") || maj.includes("marketing")) {
+        jobs.push({ title: "Product Manager / مدير منتج", reqs: ["product management", "agile", "communication"] });
+        jobs.push({ title: "Business Analyst / محلل أعمال", reqs: ["business analysis", "requirements gathering", "excel", "sql"] });
+        jobs.push({ title: "Project Manager / مدير مشروع", reqs: ["project management", "agile", "communication", "time management"] });
+      } else {
+        jobs.push({ title: "Administrative Assistant / مساعد إداري", reqs: ["excel", "communication", "time management"] });
+        jobs.push({ title: "Operations Coordinator / منسق عمليات", reqs: ["excel", "problem solving", "teamwork"] });
+      }
+
+      const userSk = new Set((skills || []).map(normS).filter(Boolean));
+      return jobs.map(j => {
+        const match = j.reqs.filter(r => userSk.has(r)).length;
+        const pct = j.reqs.length ? Math.round((match / j.reqs.length) * 100) : 0;
+        return { ...j, pct };
+      }).sort((a, b) => b.pct - a.pct);
+    }
+
+    /* Nav */
+    const appEl = document.getElementById("app");
+    function setNav() {
+      const lg = !!getSess();
+      document.getElementById("logoutBtn").classList.toggle("hidden", !lg);
+      document.getElementById("loginLink").classList.toggle("hidden", lg);
+      document.getElementById("registerLink").classList.toggle("hidden", lg);
+    }
+    document.getElementById("logoutBtn").addEventListener("click", () => { clearSess(); setNav(); location.hash = "#home"; render() });
+    document.getElementById("langBtn").addEventListener("click", () => { sl(isAr() ? "en" : "ar"); applyLang(); render() });
+    const route = () => (location.hash || "#home").replace("#", "");
+    function requireRole(role) { const s = getSess(); if (!s) { location.hash = "#login"; return null } if (s.role !== role) { location.hash = "#home"; return null } return s }
+    function showMsg(el, type, text, ms = 0) { if (!el) return; el.className = type === "ok" ? "msg-ok" : "msg-err"; el.textContent = text; if (ms) setTimeout(() => { el.className = ""; el.textContent = "" }, ms) }
+    function renderChips(container, items, onRm) {
+      container.innerHTML = "";
+      if (!items.length) { container.innerHTML = `<span class="empty-chips">${isAr() ? "لا يوجد عناصر بعد." : "Nothing added yet."}</span>`; return }
+      items.forEach((v, i) => { const c = document.createElement("span"); c.className = "chip chip-rm"; c.textContent = v; c.title = isAr() ? "اضغط للحذف" : "Click to remove"; c.addEventListener("click", () => onRm(i)); container.appendChild(c) });
+    }
+    function ringStyle(pct) {
+      const color = pct >= 70 ? "var(--teal)" : pct >= 40 ? "var(--blue)" : "var(--red)";
+      const bg = pct >= 70 ? "rgba(0,212,168,.08)" : pct >= 40 ? "rgba(59,130,246,.08)" : "rgba(244,63,94,.08)";
+      return `border-color:${color};color:${color};background:${bg}`;
+    }
+
+    /* HOME */
+    function renderHome() {
+      const s = getSess();
+      appEl.innerHTML = `
+  <div class="hero">
+    <div class="hero-grid">
+      <div class="panel fu">
+        <div class="hero-tag"><span class="hero-dot"></span>${isAr() ? "منصة الخريجين السعودية" : "Saudi Graduate Platform"}</div>
+        <h1 class="hero-h1">${t("h1a")}<br><span>${t("h1b")}</span></h1>
+        <p class="hero-desc">${t("hdesc")}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#register">${t("register")}</a>
+          <a class="btn btn-ghost btn-lg" href="#login">${t("login")}</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hstat-val col-blue">3</div><div class="hstat-lbl">${isAr() ? "أنواع الحسابات" : "Account Types"}</div></div>
+          <div><div class="hstat-val col-ok">100%</div><div class="hstat-lbl">${isAr() ? "تخزين محلي آمن" : "Secure Local Storage"}</div></div>
+          <div><div class="hstat-val col-amber">SA</div><div class="hstat-lbl">${isAr() ? "سوق عمل سعودي" : "Saudi Job Market"}</div></div>
+        </div>
+      </div>
+      <div class="fu2" style="display:grid;gap:12px;">
+        <div class="panel">
+          <div class="panel-hd">${t("quickAccess")}</div>
+          <div class="panel-sub">${isAr() ? "إذا كنت مسجّل دخول، روح مباشرة للوحة التحكم." : "Already logged in? Go straight to your dashboard."}</div>
+          <button class="btn btn-primary w-full" id="goDashBtn" type="button">${t("goDash")}</button>
+          <div id="homeMsg" class="mt-10"></div>
+          ${s ? `<hr/><div class="small">${t("welcome")}: <b>${s.name || ""}</b> &nbsp;·&nbsp; <span class="pill pill-blue">${s.role}</span></div>` : ""}
+        </div>
+        <div class="role-cards">
+          <a class="role-card" href="#register">
+            <div class="role-ic" style="background:rgba(59,130,246,.12);">🎓</div>
+            <div><div class="role-lbl">${t("grad")}</div><div class="role-desc">${t("gradRoleDesc")}</div></div>
+          </a>
+          <a class="role-card" href="#register">
+            <div class="role-ic" style="background:rgba(0,212,168,.1);">🏢</div>
+            <div><div class="role-lbl">${t("comp")}</div><div class="role-desc">${t("compRoleDesc")}</div></div>
+          </a>
+          <a class="role-card" href="#register">
+            <div class="role-ic" style="background:rgba(245,158,11,.1);">🏛️</div>
+            <div><div class="role-lbl">${t("uni")}</div><div class="role-desc">${t("uniRoleDesc")}</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+      document.getElementById("goDashBtn").addEventListener("click", () => {
+        const s = getSess();
+        if (!s) { showMsg(document.getElementById("homeMsg"), "err", t("needLogin")); return }
+        location.hash = s.role === "graduate" ? "#graduate" : s.role === "company" ? "#company" : "#university";
+      });
+    }
+
+    /* REGISTER */
+    function renderRegister() {
+      appEl.innerHTML = `
+  <div class="auth-wrap fu">
+    <div class="panel">
+      <div class="panel-hd">${t("register")}</div>
+      <div class="panel-sub">${t("chooseRole")}</div>
+      <form class="form" id="regForm">
+        <div class="g2">
+          <div class="field"><label>${t("name")}</label><input id="rName" required/></div>
+          <div class="field"><label>${t("email")}</label><input id="rEmail" type="email" required/></div>
+        </div>
+        <div class="g2">
+          <div class="field"><label>${t("pw")}</label><input id="rPw" type="password" minlength="6" required/><div class="hint">Min 6 characters</div></div>
+          <div class="field"><label>${t("chooseRole")}</label>
+            <select id="rRole">
+              <option value="graduate">${t("grad")}</option>
+              <option value="company">${t("comp")}</option>
+              <option value="university">${t("uni")}</option>
+            </select>
+          </div>
+        </div>
+        <div id="crBlock" class="hidden field"><label>${t("cr")}</label><input id="rCr" inputmode="numeric" placeholder="1234567890"/></div>
+        <div id="uniBlock" class="hidden"><div class="hint" style="padding:10px 12px;border-radius:var(--r);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:#fcd34d;">${t("uniHint")}</div></div>
+        <div id="rMsg"></div>
+        <button class="btn btn-primary btn-lg" type="submit">${t("register")}</button>
+        <div class="small" style="text-align:center;margin-top:4px;">${isAr() ? "لديك حساب؟" : "Already have an account?"} <a href="#login">${t("login")}</a></div>
+      </form>
+    </div>
+  </div>`;
+      const role = document.getElementById("rRole");
+      const crB = document.getElementById("crBlock"); const uniB = document.getElementById("uniBlock");
+      const upF = () => { crB.classList.toggle("hidden", role.value !== "company"); uniB.classList.toggle("hidden", role.value !== "university") };
+      role.addEventListener("change", upF); upF();
+      document.getElementById("regForm").addEventListener("submit", async e => {
+        e.preventDefault();
+        const msg = document.getElementById("rMsg"); msg.className = ""; msg.textContent = "";
+        const name = document.getElementById("rName").value.trim();
+        const email = document.getElementById("rEmail").value.trim().toLowerCase();
+        const pw = document.getElementById("rPw").value;
+        const crVal = document.getElementById("rCr").value;
+        if (findUser(email)) { showMsg(msg, "err", t("emailTaken")); return }
+        if (role.value === "company" && !isValidCR(crVal)) { showMsg(msg, "err", t("crBad")); return }
+        if (role.value === "university" && !isUniEmail(email)) { showMsg(msg, "err", t("uniBad")); return }
+        const pwHash = await hashPw(pw);
+        const s = db(); s.users.push({ id: uid("user"), role: role.value, name, email, pwHash, cr: role.value === "company" ? crVal : null, uniDomain: role.value === "university" ? getDomain(email) : null, createdAt: Date.now() }); sdb(s);
+        showMsg(msg, "ok", t("created")); setTimeout(() => location.hash = "#login", 700);
+      });
+    }
+
+    /* LOGIN */
+    function renderLogin() {
+      appEl.innerHTML = `
+  <div class="auth-wrap fu">
+    <div class="panel">
+      <div class="panel-hd">${t("login")}</div>
+      <div class="panel-sub">${isAr() ? "أدخل بياناتك للدخول" : "Enter your credentials to continue"}</div>
+      <form class="form" id="logForm">
+        <div class="field"><label>${t("email")}</label><input id="lEmail" type="email" required/></div>
+        <div class="field"><label>${t("pw")}</label><input id="lPw" type="password" required/></div>
+        <div id="lMsg"></div>
+        <button class="btn btn-primary btn-lg" type="submit">${t("login")}</button>
+        <div class="small" style="text-align:center;margin-top:4px;">${isAr() ? "ليس لديك حساب؟" : "No account?"} <a href="#register">${t("register")}</a></div>
+      </form>
+      <div style="margin-top:20px;padding:15px;background:rgba(255,255,255,0.05);border-radius:var(--r);border:1px dashed var(--border);">
+         <div style="font-size:13px;font-weight:bold;margin-bottom:10px;text-align:center;color:var(--t2)">🛠️ ${isAr() ? "حسابات تجريبية سريعة" : "Quick Test Accounts"}</div>
+         <div class="flex gap-8 flex-wrap" style="justify-content:center;">
+            <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('lEmail').value='ahmed@s.mu.edu.sa';document.getElementById('lPw').value='123456';">${isAr() ? "خريج" : "Graduate"}</button>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('lEmail').value='info@s.mu.edu.sa';document.getElementById('lPw').value='123456';">${isAr() ? "جامعة" : "University"}</button>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('lEmail').value='hr@technova.sa';document.getElementById('lPw').value='123456';">${isAr() ? "شركة" : "Company"}</button>
+         </div>
+      </div>
+    </div>
+  </div>`;
+      document.getElementById("logForm").addEventListener("submit", async e => {
+        e.preventDefault();
+        const msg = document.getElementById("lMsg"); msg.className = ""; msg.textContent = "";
+        const email = document.getElementById("lEmail").value.trim().toLowerCase();
+        const pw = document.getElementById("lPw").value;
+        const user = findUser(email);
+        if (!user) { showMsg(msg, "err", t("badCreds")); return }
+        if (await hashPw(pw) !== user.pwHash) { showMsg(msg, "err", t("badCreds")); return }
+        if (user.role === "university" && !isUniEmail(user.email)) { showMsg(msg, "err", t("uniBad")); return }
+        setSess({ userId: user.id, role: user.role, name: user.name, uniDomain: user.uniDomain || null }); setNav();
+        location.hash = user.role === "graduate" ? "#graduate" : user.role === "company" ? "#company" : "#university";
+      });
+    }
+
+    /* GRADUATE */
+    function renderGraduate() {
+      const s = requireRole("graduate"); if (!s) return;
+      const state = db(); const user = state.users.find(u => u.id === s.userId);
+      let prof = getProf(s.userId) || { userId: s.userId, name: user?.name || "", major: "", uniEmail: "", uniDomain: null, skills: [], certificates: [], projects: [], cv: null, updatedAt: Date.now() };
+      const persist = () => { prof.updatedAt = Date.now(); upsertProf(prof) };
+
+      appEl.innerHTML = `
+  <div class="split">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-lbl">${isAr() ? "الخريج" : "Graduate"}</div>
+        <a class="slink" href="#graduate/profile"><span class="slink-ic">👤</span>${t("sectionProfile")}</a>
+        <a class="slink" href="#graduate/skills"><span class="slink-ic">⚡</span>${t("sectionSkills")}</a>
+        <a class="slink" href="#graduate/market"><span class="slink-ic">🎯</span>${t("sectionMarket")}</a>
+        <a class="slink" href="#graduate/certs"><span class="slink-ic">🏅</span>${t("sectionCerts")}</a>
+        <a class="slink" href="#graduate/projects"><span class="slink-ic">🗂️</span>${t("sectionProjects")}</a>
+        <a class="slink" href="#graduate/cv"><span class="slink-ic">📄</span>${t("sectionCv")}</a>
+        <a class="slink" href="#graduate/analysis"><span class="slink-ic">📊</span>${t("sectionAnalysis")}</a>
+        <a class="slink" href="#graduate/jobs"><span class="slink-ic">💼</span>${t("sectionJobs")}</a>
+      </div>
+    </aside>
+    <main class="main-grid">
+      <section class="panel fu" id="g_profile">
+        <div class="panel-hd">👤 ${t("sectionProfile")}</div>
+        <div class="panel-sub">${isAr() ? "معلوماتك الشخصية والتخصص" : "Your personal information and specialty"}</div>
+        <form class="form" id="profForm">
+          <div class="g2">
+            <div class="field"><label>${t("name")}</label><input id="gName" required/></div>
+            <div class="field"><label>${t("major")}</label><input id="gMajor" placeholder="${isAr() ? "علوم الحاسب" : "Computer Science"}" required/></div>
+          </div>
+          <div class="field">
+            <label>${t("uniOptional")}</label>
+            <input id="gUniEmail" type="email" placeholder="name@s.mu.edu.sa"/>
+            <div class="hint">${t("uniOptHint")}</div>
+          </div>
+          <div id="profMsg"></div>
+          <button class="btn btn-primary" type="submit">${t("save")}</button>
+        </form>
+      </section>
+
+      <section class="panel fu2" id="g_skills">
+        <div class="sh"><div class="sh-title">⚡ ${t("sectionSkills")}</div></div>
+        <div class="g2">
+          <div class="field"><label>${t("skills")}</label><input id="skillIn" placeholder="${isAr() ? "مثال: JavaScript" : "e.g., JavaScript"}"/></div>
+          <div class="flex items-end gap-8">
+            <button class="btn btn-primary" id="addSkill" type="button">${t("add")}</button>
+            <button class="btn btn-ghost" id="clearSkills" type="button">${t("clear")}</button>
+          </div>
+        </div>
+        <div class="chips" id="skillList"></div>
+      </section>
+
+      <section class="panel fu3" id="g_market">
+        <div class="panel-hd">🎯 ${t("marketTitle")}</div>
+        <div class="panel-sub">${t("marketDesc")}</div>
+        <div class="kpis">
+          <div class="kpi" style="grid-column:1/-1;background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.2)"><div class="kpi-lbl" style="font-size:15px;font-weight:700;color:var(--text);">${t("marketMatch")}</div><div class="kpi-val" id="mScore" style="font-size:36px;margin-top:6px;color:var(--blue2);">—</div></div>
+          <div class="kpi"><div class="kpi-lbl">${t("inMarket")}</div><div class="kpi-val col-ok" id="mIn">0</div></div>
+          <div class="kpi"><div class="kpi-lbl">${t("notInMarket")}</div><div class="kpi-val col-amber" id="mOut">0</div></div>
+        </div>
+        <hr/>
+        <div class="small" style="color:var(--t2);margin-bottom:2px;">${t("inMarket")}</div>
+        <div class="chips" id="mInList"></div>
+        <div class="small mt-10" style="color:var(--t2);margin-bottom:2px;">${t("notInMarket")}</div>
+        <div class="chips" id="mOutList"></div>
+        <div class="small mt-10" style="color:var(--t2);margin-bottom:2px;">${t("suggestions")}</div>
+        <div class="chips" id="mRecList" style="margin-bottom:12px;"></div>
+        <div class="small mt-10" style="color:var(--t2);margin-bottom:2px;font-weight:700;">${t("suggestedCourses")}</div>
+        <div id="mCoursesList" style="display:grid;gap:8px;margin-top:6px;"></div>
+        <div class="small mt-14" style="color:var(--t2);margin-bottom:2px;font-weight:700;">${t("suggestedJobs")}</div>
+        <div id="mJobsList" style="display:grid;gap:8px;margin-top:6px;"></div>
+        <hr/>
+        <div class="g2">
+          <div class="field"><label>${t("importJson")}</label><input id="marketJson" type="file" accept="application/json,.json"/><div class="hint">${t("jsonHint")}</div></div>
+          <div class="flex items-end gap-8 flex-wrap">
+            <button class="btn btn-teal" id="importMarket" type="button">${t("marketImport")}</button>
+            <button class="btn btn-ghost" id="resetMarket" type="button">${t("marketReset")}</button>
+          </div>
+        </div>
+        <div id="mImportMsg" class="mt-10"></div>
+        <div class="hint mt-10">${t("updatedAt")} <b id="mUpdatedAt">—</b></div>
+      </section>
+
+      <section class="panel" id="g_certs">
+        <div class="sh"><div class="sh-title">🏅 ${t("sectionCerts")}</div></div>
+        <div class="g2">
+          <div class="field"><label>${t("certs")}</label><input id="certIn" placeholder="${isAr() ? "مثال: AWS Certified" : "e.g., AWS Certified"}"/></div>
+          <div class="flex items-end gap-8">
+            <button class="btn btn-primary" id="addCert" type="button">${t("add")}</button>
+            <button class="btn btn-ghost" id="clearCerts" type="button">${t("clear")}</button>
+          </div>
+        </div>
+        <div class="chips" id="certList"></div>
+      </section>
+
+      <section class="panel" id="g_projects">
+        <div class="sh"><div class="sh-title">🗂️ ${t("sectionProjects")}</div></div>
+        <div class="g2">
+          <div class="field"><label>${t("projects")}</label><input id="projIn" placeholder="${isAr() ? "مشروع التخرج" : "Graduation Project"}"/></div>
+          <div class="flex items-end gap-8">
+            <button class="btn btn-primary" id="addProj" type="button">${t("add")}</button>
+            <button class="btn btn-ghost" id="clearProjs" type="button">${t("clear")}</button>
+          </div>
+        </div>
+        <div class="chips" id="projList"></div>
+      </section>
+
+      <section class="panel" id="g_cv">
+        <div class="panel-hd">📄 ${t("sectionCv")}</div>
+        <div class="panel-sub">${isAr() ? "PDF فقط — يُحفظ محلياً في المتصفح (MVP)" : "PDF only — stored locally in browser (MVP)"}</div>
+        <div class="g2">
+          <div class="field"><label>PDF</label><input id="cvFile" type="file" accept="application/pdf"/></div>
+          <div class="flex items-end gap-8 flex-wrap">
+            <button class="btn btn-primary" id="saveCv" type="button">${t("save")}</button>
+            <a class="btn btn-ghost hidden" id="viewCv" href="#" target="_blank">📎 ${t("viewCv")}</a>
+          </div>
+        </div>
+        <div id="cvMsg" class="mt-10"></div>
+      </section>
+
+      <section class="panel" id="g_analysis">
+        <div class="panel-hd">📊 ${t("sectionAnalysis")}</div>
+        <div class="panel-sub">${isAr() ? "قارن مهاراتك مع متطلبات الوظائف المنشورة" : "Compare your skills with posted job requirements"}</div>
+        <button class="btn btn-primary" id="runAnalysis" type="button">▶ ${t("runAnalysis")}</button>
+        <div id="analysisMsg" class="mt-10"></div>
+        <div id="analysisRes" class="mt-14" style="display:grid;gap:12px;"></div>
+      </section>
+
+      <section class="panel" id="g_jobs">
+        <div class="sh">
+          <div class="sh-title">💼 ${t("sectionJobs")}</div>
+          <button class="btn btn-ghost btn-sm" id="refreshJobs" type="button">↻ ${t("refresh")}</button>
+        </div>
+        <div id="jobsMsg"></div>
+        <div id="jobsCards" style="display:grid;gap:12px;margin-top:10px;"></div>
+      </section>
+    </main>
+  </div>`;
+
+      document.getElementById("gName").value = prof.name || user?.name || "";
+      document.getElementById("gMajor").value = prof.major || "";
+      document.getElementById("gUniEmail").value = prof.uniEmail || "";
+
+      document.getElementById("profForm").addEventListener("submit", e => {
+        e.preventDefault();
+        const msg = document.getElementById("profMsg");
+        const nm = document.getElementById("gName").value.trim();
+        const mj = document.getElementById("gMajor").value.trim();
+        const ue = document.getElementById("gUniEmail").value.trim().toLowerCase();
+        prof.name = nm; prof.major = mj;
+        if (ue) { if (!isUniEmail(ue)) { showMsg(msg, "err", t("uniBad")); return } prof.uniEmail = ue; prof.uniDomain = getDomain(ue) }
+        else { prof.uniEmail = ""; prof.uniDomain = null }
+        persist(); showMsg(msg, "ok", t("saved"), 1200);
+      });
+
+      const viewCvLink = document.getElementById("viewCv");
+      const renderCv = () => {
+        if (prof.cv?.dataUrl) { viewCvLink.classList.remove("hidden"); viewCvLink.href = prof.cv.dataUrl; viewCvLink.textContent = `📎 ${prof.cv.fileName}` }
+        else viewCvLink.classList.add("hidden");
+      };
+
+      document.getElementById("saveCv").addEventListener("click", () => {
+        const msg = document.getElementById("cvMsg"); msg.className = ""; msg.textContent = "";
+        const f = document.getElementById("cvFile").files?.[0];
+        if (!f) { showMsg(msg, "err", t("noPdf")); return }
+        if (!isPdf(f)) { showMsg(msg, "err", t("pdfOnly")); return }
+        const r = new FileReader(); r.onload = () => { prof.cv = { fileName: f.name, dataUrl: r.result }; persist(); showMsg(msg, "ok", t("cvSaved")); renderCv() }; r.readAsDataURL(f);
+      });
+
+      function renderMarket() {
+        const mr = marketCmp(prof.skills);
+        const sc = document.getElementById("mScore"); if (!sc) return;
+        sc.textContent = `${mr.score}%`; sc.className = "kpi-val " + (mr.score >= 70 ? "col-ok" : mr.score >= 40 ? "col-blue" : "col-red");
+        document.getElementById("mIn").textContent = mr.inMarket.length;
+        document.getElementById("mOut").textContent = mr.notInMarket.length;
+        document.getElementById("mInList").innerHTML = mr.inMarket.length ? mr.inMarket.map(s => `<span class="chip chip-ok">${s}</span>`).join("") : `<span class="empty-chips">${isAr() ? "لا يوجد" : "None"}</span>`;
+        document.getElementById("mOutList").innerHTML = mr.notInMarket.length ? mr.notInMarket.map(s => `<span class="chip chip-amber">${s}</span>`).join("") : `<span class="empty-chips">${isAr() ? "لا يوجد" : "None"}</span>`;
+        const recs = marketRec(prof.skills, prof.major);
+        document.getElementById("mRecList").innerHTML = recs.length ? recs.map(s => `<span class="chip chip-blue">${s}</span>`).join("") : `<span class="empty-chips">${isAr() ? "لا اقتراحات" : "No suggestions"}</span>`;
+        const courses = marketCourses(prof.major);
+        document.getElementById("mCoursesList").innerHTML = courses.map(c => `<div style="background:rgba(255,255,255,.03);padding:10px;border-radius:var(--r);border:1px solid var(--border);"><div style="font-weight:700;font-size:14px;color:var(--text);">${c.title}</div><div style="font-size:12px;color:var(--t3);margin-top:2px;">${t("courseOrg")} ${c.org}</div></div>`).join("");
+        const jobs = marketJobs(prof.major, prof.skills);
+        document.getElementById("mJobsList").innerHTML = jobs.map(j => `<div style="background:rgba(255,255,255,.03);padding:10px;border-radius:var(--r);border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;"><div style="font-weight:700;font-size:14px;color:var(--text);">${j.title}</div><div style="font-size:12px;font-weight:800;${j.pct >= 70 ? 'color:var(--teal);' : j.pct >= 40 ? 'color:var(--blue2);' : 'color:var(--red);'}">${t("matchPct")} ${j.pct}%</div></div>`).join("");
+        const ua = document.getElementById("mUpdatedAt"); if (ua) ua.textContent = mr.updatedAt || "—";
+      }
+
+      document.getElementById("importMarket").addEventListener("click", () => {
+        const msg = document.getElementById("mImportMsg"); msg.className = ""; msg.textContent = "";
+        const f = document.getElementById("marketJson").files?.[0];
+        if (!f) { showMsg(msg, "err", t("noFile")); return }
+        const r = new FileReader(); r.onload = () => {
+          try {
+            const p = JSON.parse(r.result);
+            if (!p || !Array.isArray(p.skills)) { showMsg(msg, "err", t("badJson")); return }
+            const sk = Array.from(new Set(p.skills.map(normS).filter(Boolean)));
+            saveM({ updatedAt: p.updatedAt || new Date().toISOString().slice(0, 10), skills: sk, categories: p.categories && typeof p.categories === "object" ? p.categories : {} });
+            showMsg(msg, "ok", `${t("imported")} (${sk.length})`); renderMarket();
+          } catch { showMsg(msg, "err", t("badJson")) }
+        }; r.readAsText(f);
+      });
+
+      document.getElementById("resetMarket").addEventListener("click", () => {
+        resetM(); showMsg(document.getElementById("mImportMsg"), "ok", t("restored")); renderMarket();
+      });
+
+      function renderAll() {
+        renderChips(document.getElementById("skillList"), prof.skills, i => { prof.skills.splice(i, 1); persist(); renderAll() });
+        renderChips(document.getElementById("certList"), prof.certificates, i => { prof.certificates.splice(i, 1); persist(); renderAll() });
+        renderChips(document.getElementById("projList"), prof.projects, i => { prof.projects.splice(i, 1); persist(); renderAll() });
+        renderCv(); renderMarket();
+      }
+
+      document.getElementById("addSkill").addEventListener("click", () => { const v = document.getElementById("skillIn").value.trim(); if (!v) return; prof.skills.push(v); document.getElementById("skillIn").value = ""; persist(); renderAll() });
+      document.getElementById("clearSkills").addEventListener("click", () => { prof.skills = []; persist(); renderAll() });
+      document.getElementById("addCert").addEventListener("click", () => { const v = document.getElementById("certIn").value.trim(); if (!v) return; prof.certificates.push(v); document.getElementById("certIn").value = ""; persist(); renderAll() });
+      document.getElementById("clearCerts").addEventListener("click", () => { prof.certificates = []; persist(); renderAll() });
+      document.getElementById("addProj").addEventListener("click", () => { const v = document.getElementById("projIn").value.trim(); if (!v) return; prof.projects.push(v); document.getElementById("projIn").value = ""; persist(); renderAll() });
+      document.getElementById("clearProjs").addEventListener("click", () => { prof.projects = []; persist(); renderAll() });
+
+      document.getElementById("runAnalysis").addEventListener("click", () => {
+        const msg = document.getElementById("analysisMsg"); const res = document.getElementById("analysisRes");
+        msg.className = ""; msg.textContent = ""; res.innerHTML = "";
+        const jobs = listJobs();
+        if (!jobs.length) { showMsg(msg, "err", t("noJobs")); return }
+        if (!prof.skills.length) { showMsg(msg, "err", t("needSkills")); return }
+        jobs.forEach(job => {
+          const m = matchSkills(prof.skills, job.requiredSkills);
+          const d = document.createElement("div"); d.className = "jcard";
+          d.innerHTML = `
+        <div class="flex gap-12" style="align-items:center;">
+          <div class="match-ring" style="${ringStyle(m.pct)}">${m.pct}%</div>
+          <div><div class="jcard-title">${job.title}</div><div class="jcard-meta">${t("reqMajor")} ${job.major || "—"}</div></div>
+        </div>
+        <div class="flex gap-8" style="align-items:center;">
+          <div class="pbar-bg"><div class="pbar-fill" style="width:${m.pct}%"></div></div>
+          <span class="small">${m.pct}%</span>
+        </div>
+        <div><div class="small" style="color:var(--t2);margin-bottom:6px;">${isAr() ? "المهارات المطلوبة" : "Required skills"}</div>
+        <div class="chips">${(job.requiredSkills || []).map(s => `<span class="chip">${s}</span>`).join("")}</div></div>
+        <div><div class="small" style="color:var(--t2);margin-bottom:6px;">${t("missingSkills")}</div>
+        <div class="chips">${m.missing.length ? m.missing.map(s => `<span class="chip chip-red">${s}</span>`).join("") : `<span class="chip chip-ok">${isAr() ? "لا يوجد" : "None ✓"}</span>`}</div></div>`;
+          res.appendChild(d);
+        });
+        showMsg(msg, "ok", t("reportDone"));
+      });
+
+      function renderJobOps() {
+        const msg = document.getElementById("jobsMsg"); const cards = document.getElementById("jobsCards");
+        msg.className = ""; msg.textContent = ""; cards.innerHTML = "";
+        const jobs = listJobs(); if (!jobs.length) { showMsg(msg, "err", t("noJobs")); return }
+        jobs.forEach(job => {
+          const m = matchSkills(prof.skills, job.requiredSkills);
+          const applied = isApplied(job.jobId, s.userId);
+          const d = document.createElement("div"); d.className = "jcard";
+          d.innerHTML = `
+        <div class="flex gap-12" style="align-items:center;">
+          <div class="match-ring" style="${ringStyle(m.pct)}">${m.pct}%</div>
+          <div style="flex:1"><div class="jcard-title">${job.title}</div><div class="jcard-meta">${t("reqMajor")} ${job.major || "—"}</div></div>
+          ${applied ? `<span class="pill pill-ok">✓ ${t("applied")}</span>` : ""}
+        </div>
+        <div class="flex gap-8" style="align-items:center;"><div class="pbar-bg"><div class="pbar-fill" style="width:${m.pct}%"></div></div><span class="small">${m.pct}%</span></div>
+        <div class="chips">${(job.requiredSkills || []).map(s => `<span class="chip">${s}</span>`).join("")}</div>
+        <div class="jcard-actions">
+          <button class="btn ${applied ? "btn-ghost" : "btn-primary"}" data-apply="${job.jobId}" ${applied ? "disabled" : ""}>${applied ? `✓ ${t("applied")}` : t("apply")}</button>
+          ${m.missing.length ? `<span class="small">${m.missing.length} ${t("missing")}</span>` : ""}
+        </div>`;
+          cards.appendChild(d);
+        });
+        cards.querySelectorAll("[data-apply]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const jid = btn.getAttribute("data-apply");
+            if (applyJob(jid, s.userId)) { btn.textContent = `✓ ${t("applied")}`; btn.disabled = true; btn.classList.remove("btn-primary"); btn.classList.add("btn-ghost") }
+          });
+        });
+      }
+
+      document.getElementById("refreshJobs").addEventListener("click", renderJobOps);
+      renderAll(); renderJobOps();
+      const sub = route().split("/")[1] || "profile";
+      const map = { profile: "g_profile", skills: "g_skills", market: "g_market", certs: "g_certs", projects: "g_projects", cv: "g_cv", analysis: "g_analysis", jobs: "g_jobs" };
+
+      const links = appEl.querySelectorAll(".slink");
+      links.forEach(l => l.addEventListener("click", e => {
+        const h = l.getAttribute("href");
+        if (!h || h === "#") return;
+
+        links.forEach(x => x.classList.remove("active"));
+        l.classList.add("active");
+
+        const sec = h.split("/")[1];
+        const targetId = map[sec];
+
+        Object.values(map).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = (id === targetId) ? "block" : "none";
+        });
+      }));
+
+      const initSid = map[sub];
+      Object.values(map).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = (id === initSid) ? "block" : "none";
+      });
+
+      const initLink = Array.from(links).find(l => l.getAttribute("href") === `#graduate/${sub}`);
+      if (initLink) initLink.classList.add("active");
+
+      if (initSid) setTimeout(() => document.getElementById(initSid)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    }
+
+    /* COMPANY */
+    function renderCompany() {
+      const s = requireRole("company"); if (!s) return;
+      appEl.innerHTML = `
+  <div class="split">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-lbl">${isAr() ? "الشركة" : "Company"}</div>
+        <a class="slink" href="#company/profile"><span class="slink-ic">🏢</span>${t("sectionCompProfile")}</a>
+        <a class="slink" href="#company/post"><span class="slink-ic">➕</span>${t("sectionPost")}</a>
+        <a class="slink" href="#company/jobs"><span class="slink-ic">📋</span>${t("sectionMyJobs")}</a>
+        <a class="slink" href="#company/search"><span class="slink-ic">🔍</span>${t("sectionSearch")}</a>
+      </div>
+    </aside>
+    <main class="main-grid">
+      <section class="panel fu" id="c_profile">
+        <div class="panel-hd">🏢 ${t("sectionCompProfile")}</div>
+        <div class="panel-sub">${isAr() ? "تحديث بيانات الشركة" : "Update Company Details"}</div>
+        <form class="form" id="cProfForm">
+          <div class="field"><label>${t("name")}</label><input id="cName" required/></div>
+          <div class="field"><label>${t("industry") || "Industry"}</label><input id="cIndustry" placeholder="${isAr() ? "مثال: تقنية المعلومات" : "e.g., Information Technology"}"/></div>
+          <div class="field">
+            <label>${t("crNumber") || "CR Number"}</label>
+            <input id="cCr" disabled style="opacity:0.7;background:rgba(255,255,255,.02)"/>
+            <div class="hint">${t("crNote") || "This number is unique and cannot be changed."}</div>
+          </div>
+          <div id="cPsg"></div>
+          <button class="btn btn-primary" type="submit">${t("save")}</button>
+        </form>
+      </section>
+      <section class="panel fu2" id="c_post">
+        <div class="panel-hd">➕ ${t("sectionPost")}</div>
+        <div class="panel-sub">${isAr() ? "انشر وظيفة وحدد المهارات المطلوبة" : "Post a job and define the required skills"}</div>
+        <form class="form" id="jobForm">
+          <div class="g2">
+            <div class="field"><label>${t("jobTitle")}</label><input id="jTitle" required/></div>
+            <div class="field"><label>${t("major")}</label><input id="jMajor" placeholder="${isAr() ? "علوم الحاسب" : "Computer Science"}"/></div>
+          </div>
+          <div class="field">
+            <label>${t("reqSkills")}</label>
+            <input id="jSkills" placeholder="JavaScript, SQL, Python"/>
+            <div class="hint">${isAr() ? "افصل المهارات بفاصلة" : "Separate with commas"}</div>
+          </div>
+          <div id="jMsg"></div>
+          <button class="btn btn-primary" type="submit">${t("postJob")}</button>
+        </form>
+      </section>
+      <section class="panel fu2" id="c_jobs">
+        <div class="sh"><div class="sh-title">📋 ${t("sectionMyJobs")}</div></div>
+        <div id="jobsList" style="display:grid;gap:12px;"></div>
+      </section>
+      <section class="panel fu3" id="c_search">
+        <div class="panel-hd">🔍 ${t("sectionSearch")}</div>
+        <div class="panel-sub">${isAr() ? "بحث بسيط عن الخريجين حسب المهارة أو التخصص" : "Basic graduate search by skill or major"}</div>
+        <div class="sbar">
+          <div class="field" style="flex:1;min-width:150px;"><label>${t("filterSkill")}</label><input id="fSkill" placeholder="${isAr() ? "مثال: SQL" : "e.g., SQL"}"/></div>
+          <div class="field" style="flex:1;min-width:150px;"><label>${t("filterMajor")}</label><input id="fMajor" placeholder="${isAr() ? "علوم الحاسب" : "Computer Science"}"/></div>
+          <div class="flex items-end"><button class="btn btn-primary" id="runSearch" type="button">${t("search")}</button></div>
+        </div>
+        <div id="searchMsg" class="mt-10"></div>
+        <div id="gradsList" style="display:grid;gap:12px;margin-top:12px;"></div>
+      </section>
+    </main>
+  </div>`;
+
+      const state = db(); const user = state.users.find(u => u.id === s.userId);
+      let compProf = getProf(s.userId) || { userId: s.userId, name: user?.name || "", industry: "", updatedAt: Date.now() };
+
+      document.getElementById("cName").value = compProf.name || "";
+      document.getElementById("cIndustry").value = compProf.industry || "";
+      document.getElementById("cCr").value = user?.cr || "";
+
+      const cPsg = document.getElementById("cPsg");
+      document.getElementById("cProfForm").addEventListener("submit", e => {
+        e.preventDefault(); cPsg.className = ""; cPsg.textContent = "";
+        compProf.name = document.getElementById("cName").value.trim();
+        compProf.industry = document.getElementById("cIndustry").value.trim();
+        compProf.updatedAt = Date.now(); upsertProf(compProf);
+        user.name = compProf.name; sdb(state); setSess({ ...s, name: user.name }); setNav();
+        showMsg(cPsg, "ok", t("saved"), 3000);
+      });
+
+      const jMsg = document.getElementById("jMsg"); const jobsList = document.getElementById("jobsList");
+      document.getElementById("jobForm").addEventListener("submit", e => {
+        e.preventDefault(); jMsg.className = ""; jMsg.textContent = "";
+        const title = document.getElementById("jTitle").value.trim();
+        const major = document.getElementById("jMajor").value.trim();
+        const reqSkills = splitCS(document.getElementById("jSkills").value);
+        if (!title) return; if (!reqSkills.length) { showMsg(jMsg, "err", t("oneSkill")); return }
+        createJob({ jobId: uid("job"), companyId: s.userId, title, major, requiredSkills: reqSkills, createdAt: Date.now(), status: "active" });
+        document.getElementById("jobForm").reset(); showMsg(jMsg, "ok", t("jobPosted")); renderJobs();
+      });
+
+      function renderJobs() {
+        const myJobs = listJobs().filter(j => j.companyId === s.userId);
+        jobsList.innerHTML = "";
+
+        const activeJobs = myJobs.filter(j => j.status !== "closed");
+        const closedJobs = myJobs.filter(j => j.status === "closed");
+
+        if (!myJobs.length) { jobsList.innerHTML = `<div class="empty-chips">${t("noJobsYet")}</div>`; return }
+
+        let html = "";
+        if (activeJobs.length) {
+          html += `<div class="bold" style="margin-bottom:12px;font-size:16px;color:var(--blue2)">🟢 ${t("activeJobs")}</div>`;
+          activeJobs.forEach(job => html += renderJobCard(job, true));
+        }
+        if (closedJobs.length) {
+          html += `<div class="bold" style="margin-top:24px;margin-bottom:12px;font-size:16px;color:var(--t3)">🔴 ${t("pastJobs")}</div>`;
+          closedJobs.forEach(job => html += renderJobCard(job, false));
+        }
+        jobsList.innerHTML = html;
+
+        myJobs.forEach(job => {
+          const btnApps = jobsList.querySelector(`[data-toggle="${job.jobId}"]`);
+          if (btnApps) btnApps.addEventListener("click", function () {
+            const box = document.getElementById(`apps_${job.jobId}`);
+            box.classList.toggle("hidden");
+            this.textContent = box.classList.contains("hidden") ? t("viewApplicants") : t("hideApplicants");
+            if (!box.classList.contains("hidden")) {
+              box.innerHTML = "";
+              const appls = listApplicants(job.jobId);
+              if (!appls.length) { box.innerHTML = `<div class="empty-chips">${t("noApplicants")}</div>`; return }
+              appls.forEach(a => {
+                const p = a.profile; const u = a.user;
+                const m = p && p.skills ? matchSkills(p.skills, job.requiredSkills) : { pct: 0, missing: job.requiredSkills };
+                const r = document.createElement("div"); r.className = "acard";
+                r.innerHTML = `
+              <div class="flex gap-12" style="align-items:center;">
+                 <div class="match-ring" style="${ringStyle(m.pct)}">${m.pct}%</div>
+                 <div>
+                    <div class="bold">${p?.name || u?.name || "—"}</div>
+                    <div class="small">${t("major2")} ${p?.major || "—"}</div>
+                 </div>
+              </div>
+              <div class="chips" style="margin-top:10px;">${(p?.skills || []).slice(0, 8).map(sk => `<span class="chip">${sk}</span>`).join("")}</div>
+              <div class="mt-10">${p?.cv?.dataUrl ? `<a class="btn btn-primary btn-sm" href="${p.cv.dataUrl}" download="${p.name || u.name}_CV.pdf">📎 ${t("viewCv")}</a>` : `<span class="small" style="color:var(--t3)">${t("noCv")}</span>`}</div>`;
+                box.appendChild(r);
+              });
+            }
+          });
+
+          const btnClose = jobsList.querySelector(`[data-close="${job.jobId}"]`);
+          if (btnClose) btnClose.addEventListener("click", function () {
+            closeJobById(job.jobId);
+            renderJobs();
+          });
+
+          const btnCands = jobsList.querySelector(`[data-cands="${job.jobId}"]`);
+          if (btnCands && job.status !== "closed") {
+            btnCands.addEventListener("click", function () {
+              const box = document.getElementById(`cands_${job.jobId}`);
+              box.classList.toggle("hidden");
+              if (!box.classList.contains("hidden")) {
+                const allGrads = listGrads().filter(g => g.profile);
+                const scored = allGrads.map(g => {
+                  const m = matchSkills(g.profile.skills, job.requiredSkills);
+                  return { ...g, match: m };
+                }).filter(g => g.match.pct > 0).sort((a, b) => b.match.pct - a.match.pct).slice(0, 5);
+
+                if (!scored.length) { box.innerHTML = `<div class="empty-chips">${t("noResults")}</div>`; return; }
+                box.innerHTML = scored.map(g => `
+                         <div class="acard" style="border-left:3px solid var(--teal)">
+                             <div class="flex gap-12" style="align-items:center;">
+                                <div class="match-ring" style="${ringStyle(g.match.pct)}">${g.match.pct}%</div>
+                                <div>
+                                    <div class="bold">${g.profile.name || g.user.name} ` + (isApplied(job.jobId, g.user.id) ? `<span style="color:var(--teal);font-size:12px">(${t("applied")})</span>` : "") + `</div>
+                                    <div class="small">${t("major2")} ${g.profile.major || "—"}</div>
+                                </div>
+                             </div>
+                             <div class="chips" style="margin-top:10px;">${(g.profile.skills || []).slice(0, 8).map(sk => `<span class="chip">${sk}</span>`).join("")}</div>
+                             <div class="mt-10">${g.profile.cv?.dataUrl ? `<a class="btn btn-primary btn-sm" href="${g.profile.cv.dataUrl}" download="${g.profile.name || g.user.name}_CV.pdf">📎 ${t("viewCv")}</a>` : `<span class="small" style="color:var(--t3)">${t("noCv")}</span>`}</div>
+                         </div>`).join("");
+              }
+            });
+          }
+        });
+      }
+
+      function renderJobCard(job, isActive) {
+        const appls = listApplicants(job.jobId);
+        return `
+        <div class="jcard" style="${!isActive ? 'opacity:0.75;filter:grayscale(0.5)' : ''}">
+          <div class="flex gap-12" style="align-items:flex-start;justify-content:space-between;flex-wrap:wrap;">
+            <div><div class="jcard-title">${job.title}</div><div class="jcard-meta">${t("major2")} ${job.major || "—"}</div></div>
+            <span class="pill pill-blue">${appls.length} ${t("applicants")}</span>
+          </div>
+          <div class="chips">${job.requiredSkills.map(s => `<span class="chip">${s}</span>`).join("")}</div>
+          <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+             <button class="exp-btn" data-toggle="${job.jobId}">${t("viewApplicants")}</button>
+             ${isActive ? `<button class="exp-btn" style="border-color:var(--teal);color:var(--teal)" data-cands="${job.jobId}">🌟 ${t("candidates")}</button>` : ""}
+             ${isActive ? `<button class="exp-btn" style="border-color:var(--red);color:var(--red)" data-close="${job.jobId}">${t("closeJob")}</button>` : ""}
+          </div>
+          <div class="hidden" id="apps_${job.jobId}" style="display:grid;gap:8px;margin-top:12px;border-top:1px solid var(--border);padding-top:12px;"></div>
+          ${isActive ? `<div class="hidden" id="cands_${job.jobId}" style="display:grid;gap:8px;margin-top:12px;border-top:1px solid var(--border);padding-top:12px;"></div>` : ""}
+        </div>`;
+      }
+      renderJobs();
+
+      document.getElementById("runSearch").addEventListener("click", () => {
+        const msg = document.getElementById("searchMsg"); const list = document.getElementById("gradsList");
+        msg.className = ""; msg.textContent = ""; list.innerHTML = "";
+        const fs = document.getElementById("fSkill").value.trim().toLowerCase();
+        const fm = document.getElementById("fMajor").value.trim().toLowerCase();
+        const grads = listGrads().filter(g => g.profile).filter(g => {
+          const mok = !fm || (g.profile.major || "").toLowerCase().includes(fm);
+          const sok = !fs || (g.profile.skills || []).some(s => s.toLowerCase().includes(fs));
+          return mok && sok;
+        });
+        if (!grads.length) { showMsg(msg, "err", t("noResults")); return }
+        grads.forEach(g => {
+          const d = document.createElement("div"); d.className = "acard";
+          d.innerHTML = `
+        <div class="bold">${g.profile.name || g.user.name}</div>
+        <div class="small">${t("major2")} ${g.profile.major || "—"}</div>
+        <div class="chips">${(g.profile.skills || []).slice(0, 10).map(s => `<span class="chip">${s}</span>`).join("")}</div>
+        <div class="mt-10">${g.profile.cv?.dataUrl ? `<a class="btn btn-ghost btn-sm" href="${g.profile.cv.dataUrl}" download="${g.profile.name || g.user.name}_CV.pdf">📎 ${t("viewCv")}</a>` : `<span class="small">${t("noCv")}</span>`}</div>`;
+          list.appendChild(d);
+        });
+        showMsg(msg, "ok", isAr() ? `تم العثور على ${grads.length} نتائج.` : `${grads.length} results found.`);
+      });
+
+      const sub = route().split("/")[1] || "profile";
+      const map = { profile: "c_profile", post: "c_post", jobs: "c_jobs", search: "c_search" };
+
+      const links = appEl.querySelectorAll(".slink");
+      links.forEach(l => l.addEventListener("click", e => {
+        const h = l.getAttribute("href");
+        if (!h || h === "#") return;
+
+        links.forEach(x => x.classList.remove("active"));
+        l.classList.add("active");
+
+        const sec = h.split("/")[1];
+        const targetId = map[sec];
+
+        Object.values(map).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = (id === targetId) ? "block" : "none";
+        });
+      }));
+
+      const initSid = map[sub];
+      Object.values(map).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = (id === initSid) ? "block" : "none";
+      });
+
+      const initLink = Array.from(links).find(l => l.getAttribute("href") === `#company/${sub}`);
+      if (initLink) initLink.classList.add("active");
+
+      if (initSid) setTimeout(() => document.getElementById(initSid)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    }
+
+    /* UNIVERSITY */
+    function renderUniversity() {
+      const s = requireRole("university"); if (!s) return;
+      appEl.innerHTML = `
+  <div class="split">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-lbl">${isAr() ? "الجامعة" : "University"}</div>
+        <a class="slink" href="#university/overview"><span class="slink-ic">🏛️</span>${t("overview")}</a>
+        <a class="slink" href="#university/reports"><span class="slink-ic">📊</span>${t("sectionReports")}</a>
+        <a class="slink" href="#university/market"><span class="slink-ic">📈</span>${t("sectionMarketUni")}</a>
+        <a class="slink" href="#university/graduates"><span class="slink-ic">🎓</span>${t("sectionGrads")}</a>
+      </div>
+    </aside>
+    <main class="main-grid">
+      <section class="panel fu" id="u_overview">
+        <div class="panel-hd">🏛️ ${t("overview")}</div>
+        <div class="panel-sub">${isAr() ? "إحصائيات وبيانات الجامعة" : "University Statistics and Data"}</div>
+        <div class="card" style="margin-bottom:14px;border-color:var(--blue);background:rgba(59,130,246,.05)">
+           <div class="flex" style="align-items:center;gap:15px;">
+              <div class="brand-m" style="width:50px;height:50px;font-size:24px;">م</div>
+              <div>
+                 <div style="font-size:18px;font-weight:800;color:var(--text)">${t("uniName")}</div>
+                 <div class="small">📍 ${t("uniLoc")}</div>
+              </div>
+           </div>
+        </div>
+        <div class="kpis" id="uOverviewKpis" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:14px;"></div>
+        <div class="card">
+           <div class="bold" style="margin-bottom:14px;font-size:15px;">💡 ${isAr() ? "توصيات بمهارات يحتاجها طلابك" : "Recommended Skills for your Students"}</div>
+           <div class="small" style="margin-bottom:10px;">${isAr() ? "مهارات مطلوبة بسوق العمل أو من الوظائف المنشورة ولم يضفها معظم طلابك:" : "Skills demanded in the market not widely adopted by your students:"}</div>
+           <div class="chips" id="uRecSkills"></div>
+        </div>
+      </section>
+      <section class="panel fu" id="u_reports">
+        <div class="panel-hd">📊 ${t("sectionReports")}</div>
+        <div class="panel-sub">${t("gapReportDesc")}</div>
+        <button class="btn btn-primary" id="genReport" type="button">▶ ${t("genReport")}</button>
+        <div id="repMsg" class="mt-10"></div>
+        <div id="gapList" class="mt-14"></div>
+      </section>
+      <section class="panel fu2" id="u_market">
+        <div class="panel-hd">📈 ${t("sectionMarketUni")}</div>
+        <div class="panel-sub">${t("marketAnalysisDesc")}</div>
+        <button class="btn btn-primary" id="analyzeMarket" type="button">▶ ${t("analyzeMarket")}</button>
+        <div id="mktMsg" class="mt-10"></div>
+        <div id="mktList" class="mt-14"></div>
+      </section>
+      <section class="panel fu3" id="u_grads">
+        <div class="panel-hd">🎓 ${t("myGrads")}</div>
+        <div class="panel-sub">${t("gradsDesc")}</div>
+        <div class="sbar">
+          <div class="field" style="flex:1;min-width:150px;"><label>${t("filterSkill")}</label><input id="uFSkill" placeholder="SQL"/></div>
+          <div class="field" style="flex:1;min-width:150px;"><label>${t("filterMajor")}</label><input id="uFMajor" placeholder="${isAr() ? "علوم الحاسب" : "Computer Science"}"/></div>
+          <div class="flex items-end"><button class="btn btn-primary" id="uSearch" type="button">${t("search")}</button></div>
+        </div>
+        <div id="uGradMsg" class="mt-10"></div>
+        <div id="uGradList" style="display:grid;gap:12px;margin-top:12px;"></div>
+      </section>
+    </main>
+  </div>`;
+
+      const stateU = db(); const uniUser = stateU.users.find(u => u.id === s.userId);
+      const uniDomain = uniUser?.uniDomain || s.uniDomain || null;
+      const uniGrads = dom => listGrads().filter(g => g.profile && sameDomain(g.profile.uniDomain, dom));
+
+      function renderOverview() {
+        const grads = uniGrads(uniDomain);
+        const allGrads = listGrads();
+        const totalRegistered = grads.length;
+        const totalAll = Math.max(1, allGrads.length);
+        const registeredPct = Math.round((totalRegistered / totalAll) * 100);
+
+        const allApps = db().apps;
+        const employed = grads.filter(g => allApps.some(a => a.gid === g.user.id));
+        const employedPct = totalRegistered ? Math.round((employed.length / totalRegistered) * 100) : 0;
+
+        const jobs = listJobs();
+        const mc = new Map(); jobs.forEach(j => (j.requiredSkills || []).forEach(s => { const k = normS(s); mc.set(k, (mc.get(k) || 0) + 1) }));
+        const sc = new Map(); grads.forEach(g => (g.profile.skills || []).forEach(s => { const k = normS(s); sc.set(k, (sc.get(k) || 0) + 1) }));
+
+        let avgGap = 0; let totalGap = 0; let demandedSkills = 0;
+        mc.forEach((dCount, skill) => {
+          demandedSkills++;
+          const pos = sc.get(skill) || 0;
+          if (dCount > pos) totalGap += (dCount - pos);
+        });
+        avgGap = demandedSkills ? Math.round(totalGap / demandedSkills) : 0;
+
+        let stuMarketMatch = 0;
+        const market = loadM(); const mSkills = new Set(market.skills.map(normS));
+        const studentSkillsSet = new Set(Array.from(sc.keys()));
+        const inM = Array.from(studentSkillsSet).filter(s => mSkills.has(s));
+        if (studentSkillsSet.size > 0) {
+          stuMarketMatch = Math.round((inM.length / studentSkillsSet.size) * 100);
+        } else {
+          stuMarketMatch = 0;
+        }
+
+        const kpis = document.getElementById("uOverviewKpis");
+        if (kpis) kpis.innerHTML = `
+          <div class="kpi"><div class="kpi-val col-blue">${registeredPct}%</div><div class="kpi-lbl">${t("pctRegistered")}</div></div>
+          <div class="kpi"><div class="kpi-val col-amber">${avgGap}</div><div class="kpi-lbl">${t("avgTechGap")}</div></div>
+          <div class="kpi"><div class="kpi-val col-ok">${employedPct}%</div><div class="kpi-lbl">${t("pctEmployed")}</div></div>
+          <div class="kpi"><div class="kpi-val col-blue">${stuMarketMatch}%</div><div class="kpi-lbl">${t("stuMarketMatch")}</div></div>
+        `;
+
+        const recList = document.getElementById("uRecSkills");
+        const recs = Array.from(mc.keys()).filter(k => !studentSkillsSet.has(k)).sort((a, b) => mc.get(b) - mc.get(a)).slice(0, 10);
+        if (recs.length === 0) {
+          recs.push(...market.skills.filter(k => !studentSkillsSet.has(k)).slice(0, 10));
+        }
+        if (recList) recList.innerHTML = recs.length ? recs.map(s => `<span class="chip chip-blue">${s}</span>`).join("") : `<span class="empty-chips">${isAr() ? "لا توجد توصيات حالياً" : "No recommendations"}</span>`;
+      }
+      renderOverview();
+
+      document.getElementById("genReport").addEventListener("click", () => {
+        const msg = document.getElementById("repMsg"); const list = document.getElementById("gapList");
+        msg.className = ""; msg.textContent = ""; list.innerHTML = "";
+        if (!uniDomain) { showMsg(msg, "err", t("uniDomainErr")); return }
+        const jobs = listJobs(); const grads = uniGrads(uniDomain);
+        if (!jobs.length) { showMsg(msg, "err", t("noJobsPosted")); return }
+        if (!grads.length) { showMsg(msg, "err", t("noUniGrads")); return }
+        const mc = new Map(); jobs.forEach(j => (j.requiredSkills || []).forEach(s => { const k = normS(s); mc.set(k, (mc.get(k) || 0) + 1) }));
+        const sc = new Map(); grads.forEach(g => (g.profile.skills || []).forEach(s => { const k = normS(s); sc.set(k, (sc.get(k) || 0) + 1) }));
+        const all = new Set([...mc.keys(), ...sc.keys()]);
+        const gaps = Array.from(all).map(k => ({ skill: k, demanded: mc.get(k) || 0, possessed: sc.get(k) || 0, gap: (mc.get(k) || 0) - (sc.get(k) || 0) })).sort((a, b) => b.gap - a.gap).filter(x => x.gap > 0).slice(0, 12);
+        if (!gaps.length) { showMsg(msg, "ok", t("noGapDetected")); return }
+        const maxGap = gaps[0].gap;
+        const wrap = document.createElement("div"); wrap.className = "card";
+        wrap.innerHTML = `<div class="bold" style="margin-bottom:14px;font-size:15px;">${isAr() ? "فجوة المهارات" : "Skill Gap Analysis"}</div>` +
+          gaps.map(g => `
+        <div class="gbar-row">
+          <div class="gbar-skill">${g.skill}</div>
+          <div style="display:flex;align-items:center;gap:8px;flex:1;">
+            <div style="display:grid;gap:4px;flex:1;">
+              <div class="flex gap-8" style="align-items:center;"><div class="pbar-bg" style="flex:1"><div class="pbar-fill" style="width:${Math.round(g.demanded / maxGap * 100)}%;background:linear-gradient(90deg,var(--blue),#818cf8)"></div></div><span class="small">${t("demanded")} ${g.demanded}</span></div>
+              <div class="flex gap-8" style="align-items:center;"><div class="pbar-bg" style="flex:1"><div class="pbar-fill" style="width:${Math.round(g.possessed / maxGap * 100)}%;background:linear-gradient(90deg,var(--teal),#00f5c8)"></div></div><span class="small">${t("possessed")} ${g.possessed}</span></div>
+            </div>
+          </div>
+          <div class="gbar-gap">−${g.gap}</div>
+        </div>`).join("");
+        list.appendChild(wrap);
+        showMsg(msg, "ok", isAr() ? "تم إنشاء التقرير." : "Report generated.");
+      });
+
+      document.getElementById("analyzeMarket").addEventListener("click", () => {
+        const msg = document.getElementById("mktMsg"); const list = document.getElementById("mktList");
+        msg.className = ""; msg.textContent = ""; list.innerHTML = "";
+        const jobs = listJobs(); if (!jobs.length) { showMsg(msg, "err", t("noJobsAnalyze")); return }
+        const counts = new Map(); jobs.forEach(j => (j.requiredSkills || []).forEach(s => { const k = normS(s); counts.set(k, (counts.get(k) || 0) + 1) }));
+        const arr = Array.from(counts.entries()).map(([skill, count]) => ({ skill, count })).sort((a, b) => b.count - a.count).slice(0, 20);
+        const max = arr[0]?.count || 1;
+        const wrap = document.createElement("div"); wrap.className = "card";
+        wrap.innerHTML = `<div class="bold" style="margin-bottom:14px;font-size:15px;">🏆 ${t("topSkills")}</div>` +
+          arr.map(x => `<div class="mbar-row"><div class="mbar-name">${x.skill}</div><div class="pbar-bg"><div class="pbar-fill" style="width:${Math.round(x.count / max * 100)}%"></div></div><div class="mbar-count">${x.count}</div></div>`).join("");
+        list.appendChild(wrap); showMsg(msg, "ok", t("marketDone"));
+      });
+
+      document.getElementById("uSearch").addEventListener("click", () => {
+        const msg = document.getElementById("uGradMsg"); const list = document.getElementById("uGradList");
+        msg.className = ""; msg.textContent = ""; list.innerHTML = "";
+        if (!uniDomain) { showMsg(msg, "err", t("uniDomainErr")); return }
+        const fs = document.getElementById("uFSkill").value.trim().toLowerCase();
+        const fm = document.getElementById("uFMajor").value.trim().toLowerCase();
+        let grads = uniGrads(uniDomain).filter(g => {
+          const mok = !fm || (g.profile.major || "").toLowerCase().includes(fm);
+          const sok = !fs || (g.profile.skills || []).some(s => s.toLowerCase().includes(fs));
+          return mok && sok;
+        });
+        if (!grads.length) { showMsg(msg, "err", t("noResults")); return }
+        grads.forEach(g => {
+          const d = document.createElement("div"); d.className = "acard";
+          d.innerHTML = `
+        <div class="bold">${g.profile.name || g.user.name}</div>
+        <div class="small">${t("major2")} ${g.profile.major || "—"}</div>
+        <div class="chips">${(g.profile.skills || []).slice(0, 12).map(s => `<span class="chip">${s}</span>`).join("")}</div>
+        <div class="mt-10">${g.profile.cv?.dataUrl ? `<a class="btn btn-ghost btn-sm" href="${g.profile.cv.dataUrl}" target="_blank">📎 ${t("viewCv")}</a>` : `<span class="small">${t("noCv")}</span>`}</div>`;
+          list.appendChild(d);
+        });
+        showMsg(msg, "ok", isAr() ? `${grads.length} ${t("foundGrads")}` : `${grads.length} ${t("foundGrads")}`);
+      });
+
+      const sub = route().split("/")[1] || "overview";
+      const map = { overview: "u_overview", reports: "u_reports", market: "u_market", graduates: "u_grads" };
+
+      const links = appEl.querySelectorAll(".slink");
+      links.forEach(l => l.addEventListener("click", e => {
+        const h = l.getAttribute("href");
+        if (!h || h === "#") return;
+
+        links.forEach(x => x.classList.remove("active"));
+        l.classList.add("active");
+
+        const sec = h.split("/")[1];
+        const targetId = map[sec];
+
+        ["u_overview", "u_reports", "u_market", "u_grads"].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = (id === targetId) ? "block" : "none";
+        });
+      }));
+
+      const initSid = map[sub];
+      ["u_overview", "u_reports", "u_market", "u_grads"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = (id === initSid) ? "block" : "none";
+      });
+
+      const initLink = Array.from(links).find(l => l.getAttribute("href") === `#university/${sub}`);
+      if (initLink) initLink.classList.add("active");
+
+      if (initSid) setTimeout(() => document.getElementById(initSid)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    }
+
+    /* ROUTER */
+    function render() {
+      applyLang(); setNav();
+      const r = route();
+      if (r === "home") return renderHome();
+      if (r === "register") return renderRegister();
+      if (r === "login") return renderLogin();
+      if (r.startsWith("graduate")) return renderGraduate();
+      if (r.startsWith("company")) return renderCompany();
+      if (r.startsWith("university")) return renderUniversity();
+      location.hash = "#home";
+    }
+
+    window.addEventListener("hashchange", render);
+    fetch("/api/db").then(res => res.json()).then(data => {
+      window.memoryDB = Object.assign(window.memoryDB, data);
+      applyLang(); setNav();
+      if (!location.hash || location.hash === "#") location.hash = "#home";
+      render();
+    }).catch(err => {
+      console.error(err);
+      applyLang(); setNav();
+      if (!location.hash || location.hash === "#") location.hash = "#home";
+      render();
+    });
+  </script>
+</body>
+
+</html>
